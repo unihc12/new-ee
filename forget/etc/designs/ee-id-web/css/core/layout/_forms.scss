@@ -1,0 +1,658 @@
+/* stylelint-disable no-descending-specificity */
+// For this file the rule is incompatible with correct usage of respond mixins - cancel connected errors in stylelint
+
+// Form styles
+
+$form-standard-background-color: $color-ivory-background;
+$form-standard-border-color: $color-grey-light;
+
+%standard-container {
+	padding: 1em;
+	border: 1px solid $form-standard-border-color;
+	border-radius: $base-border-radius;
+	background-color: $form-standard-background-color;
+}
+
+%standard-element-styling {
+	@include respond(720) {
+		padding: .875em;
+	}
+
+	padding: .875em .5em;
+	border: 1px solid $form-standard-border-color;
+	border-radius: $base-border-radius;
+
+	&:focus {
+		border-color: $color-grey;
+		background-color: $form-standard-background-color;
+		outline: none;
+	}
+
+	&.invalid {
+		border-color: $color-error;
+		background-color: $color-error-background;
+		box-shadow: none;
+	}
+
+	&.validated {
+		border-color: $color-valid;
+	}
+}
+
+.styled-select {
+	display: inline-block;
+	min-width: 7em;
+
+	select {
+		@extend %sprite-background-image;
+		@extend %standard-element-styling;
+		@include ee-sprite-position(15, 100%);
+
+		appearance: none;
+		width: 100%;
+		margin-right: 3em;
+		background-color: transparent; // Hide native arrow on FF where -moz-appearance doesn't
+		// https://gist.github.com/joaocunha/6273016
+		text-indent: .01px;
+		text-overflow: '';
+
+		&[multiple] {
+			background-image: none;
+		}
+	}
+
+	option {
+		padding: 0 1em;
+	}
+}
+
+.ee-form {
+	position: relative;
+
+	h3 {
+		margin-top: 1.5em;
+	}
+
+	fieldset {
+		margin: 0;
+		padding: 1em;
+		border: 1px solid $form-standard-border-color;
+		border-radius: $base-border-radius;
+	}
+
+	input[type='email'],
+	input[type='password'],
+	input[type='search'],
+	input[type='tel'],
+	input[type='text'],
+	input[type='url'],
+	textarea {
+		@extend %standard-element-styling;
+	}
+
+	input[disabled],
+	textarea[disabled],
+	input[readonly],
+	textarea[readonly] {
+		border-color: $color-grey !important;
+		background-color: $color-grey-light !important;
+	}
+
+	button,
+	input[type='reset'],
+	input[type='button'],
+	input[type='submit'] {
+		@extend %theme-button-aqua;
+
+		&[disabled] {
+			color: $color-button-disabled;
+			background-color: $color-button-disabled-background;
+		}
+
+		&.alt {
+			@extend %theme-button-white;
+			@extend %theme-button-border-aqua;
+		}
+	}
+
+	input[type='checkbox'],
+	input[type='radio'] {
+		position: absolute;
+		left: -999em;
+
+		+ label {
+			position: relative;
+			display: inline-block;
+			margin: 0;
+			padding-left: 2.5em;
+			vertical-align: middle;
+
+			&:before {
+				@extend %sprite-background-image;
+
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 10px;
+				width: 25px;
+				height: 25px;
+			}
+		}
+
+		&:focus + label {
+			outline: 1px dotted $color-grey;
+		} // IE8- doesn't support ':checked' pseudo class, so revert to native
+
+		.lt-ie9 & {
+			position: static;
+
+			+ label {
+				margin-left: .25em;
+				padding: 0;
+
+				&:before {
+					display: none;
+					content: none;
+				}
+			}
+		}
+	}
+
+	input[type='checkbox'] {
+		+ label:before {
+			@include ee-sprite-position(6);
+		}
+
+		&.invalid + label:before {
+			@include ee-sprite-position(8);
+		}
+
+		&:checked + label:before {
+			@include ee-sprite-position(7);
+		}
+	}
+
+	input[type='radio'] {
+		+ label:before {
+			@include ee-sprite-position(12);
+		}
+
+		&.invalid + label:before {
+			@include ee-sprite-position(14);
+		}
+
+		&:checked + label:before {
+			@include ee-sprite-position(13);
+		}
+
+		&:disabled + label {
+			opacity: .5 !important;
+		}
+	}
+
+	textarea {
+		min-height: 8em;
+		resize: vertical;
+	}
+
+	button {
+		@extend %theme-button-aqua;
+	}
+
+	button.hidden {
+		display: none;
+	}
+}
+
+.ee-form--full-page {
+	input[type='email'],
+	input[type='password'],
+	input[type='search'],
+	input[type='tel'],
+	input[type='text'],
+	input[type='url'],
+	textarea,
+	.styled-select {
+		display: block;
+		width: 100%;
+	}
+}
+
+.ee-form-required-text {
+	&:before {
+		content: '*';
+		display: inline;
+		margin-right: .25em;
+	}
+}
+
+.ee-form-field {
+	position: relative;
+	margin: 1em 0;
+
+	label {
+		display: inline-block;
+		margin: .5em 0;
+		cursor: pointer;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.ee-form-field--input-group {
+	> label {
+		margin-bottom: 1em;
+	}
+
+	.ee-form-control {
+		label {
+			color: $color-aqua;
+		}
+	}
+
+	input[type='checkbox'],
+	input[type='radio'] {
+		+ label {
+			padding-left: 2em;
+
+			&:before {
+				width: 19px;
+				height: 19px;
+			}
+		}
+	} // Checkboxes/radio buttons within an input group are slightly smaller
+
+	input[type='checkbox'] {
+		+ label:before {
+			@include ee-sprite-position(3);
+		}
+
+		&.invalid + label:before {
+			@include ee-sprite-position(5);
+		}
+
+		&:checked + label:before {
+			@include ee-sprite-position(4);
+		}
+	}
+
+	input[type='radio'] {
+		+ label:before {
+			@include ee-sprite-position(9);
+		}
+
+		&.invalid + label:before {
+			@include ee-sprite-position(11);
+		}
+
+		&:checked + label:before {
+			@include ee-sprite-position(10);
+		}
+	}
+}
+
+.ee-form-field--required {
+	> label {
+		&:after {
+			content: '*';
+			display: inline;
+			margin-left: .25em;
+		}
+	}
+}
+
+//
+// General form control
+//
+.ee-form-control-wrapper {
+	display: block;
+	position: relative;
+}
+
+.ee-form-control {
+	display: block;
+
+	+ .ee-form-control {
+		margin-top: 1em;
+	}
+
+	.no-js .ee-form-field--tooltip & {
+		min-height: 10em;
+	}
+}
+
+.ee-form-control--twin {
+	@include overflow-hidden;
+	@include clearfix;
+
+	.styled-select {
+		float: left;
+		width: 50%;
+		padding-right: .5em;
+
+		+ .styled-select {
+			padding-right: 0;
+			padding-left: .5em;
+		}
+	}
+}
+
+//
+// Form field messages
+//
+.ee-form-message-wrapper {
+	display: block;
+	width: 100%;
+}
+
+.ee-form-message {
+	display: block;
+}
+
+.ee-form-field--tooltip {
+	.no-js & .ee-form-message,
+	&.ee-form-field--invalid .ee-form-message,
+	.js & .ee-form-message--active {
+		@extend %standard-container;
+	}
+
+	.ee-form-message-icon {
+		color: $color-aqua;
+		cursor: pointer;
+
+		&:before {
+			content: $ee-icon-informationcircle;
+		}
+	}
+}
+
+.ee-form-field--invalid {
+	.ee-form-message-icon {
+		color: $color-error;
+		cursor: default;
+
+		&:before {
+			content: $ee-icon-warning;
+		}
+	}
+}
+
+.ee-form-field--validated {
+	.ee-form-message-icon {
+		cursor: default;
+
+		&:before {
+			color: $color-valid;
+			content: $ee-icon-tick;
+		}
+	}
+}
+
+.ee-form-message-text {
+	display: block;
+	position: relative;
+
+	.js .ee-form-message--hidden & {
+		@include visually-hidden;
+	}
+}
+
+//
+// Breakpoints
+//
+@include respond(0, 720) {
+	.ee-form-field {
+		label {
+			font-weight: 700;
+		}
+	}
+
+	.ee-form-field--select,
+	.ee-form-field--input-group {
+		&.ee-form-field--tooltip {
+			> label {
+				padding-right: 3em;
+			}
+		}
+
+		label {
+			font-weight: 400;
+		}
+
+		.ee-form-message {
+			margin: .5em 0 1em;
+		}
+
+		.ee-form-message--hidden {
+			margin: 0;
+		}
+
+		.ee-form-message-icon {
+			top: 0;
+		}
+	}
+
+	.ee-form-field--tooltip,
+	.ee-form-field--invalid,
+	.ee-form-field--validated {
+		.ee-form-control {
+			padding-right: 4em;
+		} // The following field types do not have the tooltip icon associated with ee-form-control
+
+		&.ee-form-field--input-group,
+		&.ee-form-field--select {
+			.ee-form-control {
+				padding-right: 0;
+			}
+		}
+	}
+
+	.ee-form-message {
+		margin-top: 1em;
+	}
+
+	.ee-form-message-icon {
+		position: absolute;
+		top: .25em;
+		right: .25em;
+		font-size: 2.5em;
+
+		.ee-form-field--single-checkbox & {
+			top: -.125em;
+		}
+	}
+
+	.ee-form-field--tooltip {
+		.ee-form-message--active,
+		&.ee-form-field--invalid .ee-form-message {
+			.ee-form-message-text {
+				&:before,
+				&:after {
+					content: '';
+					position: absolute;
+					right: convert-to-em(-2px, 14px);
+				}
+
+				&:before {
+					@include triangle(1.75em, $form-standard-border-color, up);
+
+					top: convert-to-em(-38px, 14px);
+				}
+
+				&:after {
+					@include triangle(1.75em, $form-standard-background-color, up);
+
+					top: convert-to-em(-37px, 14px);
+				}
+			}
+		}
+	}
+}
+
+@include respond(720) {
+	.ee-form--full-page {
+		@include span-columns(6);
+	}
+
+	.ee-form-required-text {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		width: 100%;
+		margin: 0;
+		padding-left: $grid-gutter-medium;
+		text-align: right;
+	}
+
+	.ee-form-field {
+		position: relative;
+
+		label {
+			font-size: convert-to-em(18px);
+		}
+	}
+
+	.ee-form-field--input-group {
+		.ee-form-control {
+			label {
+				font-size: .875em;
+			}
+		}
+	}
+
+	.ee-form-field--inline-group {
+		.ee-form-control-wrapper {
+			@include pie-clearfix;
+		}
+
+		.ee-form-control {
+			float: left;
+			margin: 0 0 1em;
+		}
+	}
+
+	.ee-form-field--tooltip {
+		.ee-form-message--active,
+		&.ee-form-field--invalid .ee-form-message {
+			.ee-form-message-text {
+				&:before,
+				&:after {
+					content: '';
+					position: absolute;
+					top: 0;
+				}
+
+				&:before {
+					@include triangle(1.5em, $form-standard-border-color, left);
+
+					left: convert-to-em(-40px);
+				}
+
+				&:after {
+					@include triangle(1.5em, $form-standard-background-color, left);
+
+					left: convert-to-em(-39px);
+				}
+			}
+		}
+
+		&.ee-form-field--select {
+			.ee-form-message-wrapper {
+				top: auto;
+			}
+		}
+
+		&.ee-form-field--single-checkbox {
+			.ee-form-control {
+				padding-top: 1em;
+			}
+		}
+	}
+
+	.ee-form-message-wrapper {
+		position: absolute;
+		top: convert-to-em(-3px);
+		left: 100%;
+		padding-left: $grid-gutter-medium;
+	}
+
+	.ee-form-message {
+		position: relative;
+		padding: 1em;
+	}
+
+	.ee-form-message--active {
+		top: -1px;
+		left: -1px;
+	}
+
+	.ee-form-message-icon {
+		position: absolute;
+		z-index: 1;
+	}
+
+	.ee-form-message-text {
+		padding-left: 2.5em;
+	}
+}
+
+@include respond(1200) {
+	.ee-form-required-text,
+	.ee-form-message-wrapper {
+		padding-left: $grid-gutter-large;
+	}
+}
+
+// columns for inline groups
+@include respond(720, 960) {
+	// 2 columns
+	.ee-form-field--inline-group {
+		.ee-form-control {
+			width: 50%;
+
+			&:nth-child(2n-1) {
+				clear: left;
+				padding-right: .5em;
+			}
+		}
+	}
+}
+
+@include respond(960, 1360) {
+	// 3 columns
+	.ee-form-field--inline-group {
+		.ee-form-control {
+			width: 33.333%;
+
+			&:nth-child(3n-2) {
+				clear: left;
+			}
+
+			&:nth-child(3n-1),
+			&:nth-child(3n-2) {
+				padding-right: .5em;
+			}
+		}
+	}
+}
+
+@include respond(1360) {
+	// 4 columns
+	.ee-form-field--inline-group {
+		.ee-form-control {
+			width: 25%;
+
+			&:nth-child(4n-3) {
+				clear: left;
+			}
+
+			&:nth-child(4n-1),
+			&:nth-child(4n-2),
+			&:nth-child(4n-3) {
+				padding-right: .5em;
+			}
+		}
+	}
+}

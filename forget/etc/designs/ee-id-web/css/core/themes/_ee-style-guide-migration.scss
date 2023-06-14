@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Temporary styles - provide compatibility of current layout with new SG (style guide) components.
+   Should be removed when all components and layouts are fully normalized according to the SG.
+   ========================================================================== */
+
+.EE {
+	.btn {
+		&:disabled {
+			.btn__spinner {
+				stroke: $color-coal;
+			}
+		}
+
+		p {
+			font-weight: inherit;
+			font-size: inherit;
+			display: inline;
+		}
+
+		@include respond(0, 784) {
+			&.not-desktop-margin-left {
+				margin-left: .5rem !important;
+			}
+
+			&.not-desktop-btn-width-100 {
+				width: 100%;
+			}
+		}
+
+		@include respond(0, 480) {
+			&.mobile-margin-top-1 {
+				margin-top: 1rem !important;
+			}
+		}
+
+		@include respond(480, 784) {
+			&.personal-details__group__btn {
+				width: auto;
+			}
+		}
+	}
+
+	.form__label,
+	.icon-link,
+	.notification__heading {
+		p {
+			display: inline;
+			font-size: inherit;
+			font-weight: inherit;
+		}
+	}
+
+	.notification__text {
+		word-break: break-word;
+	}
+
+	.check-white {
+		.form__check-input {
+			& + .form__label {
+				&:before {
+					background: $color-white;
+				}
+			}
+		}
+	}
+
+	.js-tooltip {
+		min-width: 265px;
+
+		.js-tooltip-close {
+			&.tooltip__close {
+				display: block;
+			}
+		}
+	}
+
+	[data-icon-type] a {
+		color: $color-aqua;
+		font-weight: 700;
+		border-bottom: none;
+		padding-right: .125rem;
+		padding-left: 1.75rem;
+		text-indent: -1.75rem;
+	}
+
+	.form {
+		&__password-toggle {
+
+			@media not all and (min-resolution: .001dpcm) {
+				// patch for safari
+				@supports (-webkit-appearance:none) {
+					right: 0 !important;
+				}
+			}
+
+			// patch for firefox
+			@supports (-moz-appearance:none) {
+				right: 0 !important;
+			}
+
+			right: 20px !important;
+		}
+
+		&__icon {
+			&--error,
+			&--valid {
+				z-index: 10;
+			}
+		}
+
+		&__tooltip {
+			&-error,
+			&-valid {
+				p {
+					display: inline;
+				}
+			}
+		}
+	}
+}
+
+div.eed-off-canvas__push {
+	background: $color-fog;
+}
+

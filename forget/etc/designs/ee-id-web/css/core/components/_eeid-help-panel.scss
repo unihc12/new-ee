@@ -1,0 +1,166 @@
+.eeid-help-panel {
+	position: relative;
+	padding: 20px 25px 15px;
+	line-height: 22px;
+	background-color: $color-white;
+	border: .0625rem solid rgba($color-stone, .75);
+	border-radius: .5rem;
+	box-shadow: 0 .25rem .325rem .0625rem rgba($color-black, .1);
+	display: none;
+
+	&__header {
+		font-size: 18px;
+		margin: 0 0 20px;
+		font-weight: 500;
+	}
+
+	&--no-arrow {
+		&:before,
+		&:after {
+			opacity: 0;
+		}
+	}
+
+	&--floating-right {
+		position: absolute;
+		top: 30px;
+		left: 24px;
+		width: 100%;
+		transform: translateX(100%);
+		z-index: 1;
+		@include respond(0, 720) {
+			margin-top: 20px;
+			top: 0;
+			left: 0;
+			position: relative;
+			transform: none;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: -9px;
+			top: 60px;
+			width: 1rem;
+			height: 1rem;
+			background-color: $color-white;
+			border-left: .0625rem solid rgba($color-stone, .75);
+			border-top: .0625rem solid rgba($color-stone, .75);
+			box-shadow: -.125rem -.125rem .25rem -.125rem rgba($color-black, .1);
+			transform: rotate(-45deg);
+			@include respond(0, 720) {
+				top: -9px;
+				left: 20px;
+				border-left: none;
+				border-right: .0625rem solid rgba($color-stone, .75);
+				box-shadow: none;
+			}
+		}
+	}
+
+	p {
+		margin: 0 0 10px;
+	}
+
+	ul {
+		list-style: none;
+		padding-left: 0;
+		margin: 0 0 10px 0;
+
+		li {
+			padding-left: 27px;
+			margin-bottom: 8px;
+			position: relative;
+			@extend .ee-icon-tick;
+
+			&:before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				color: $color-aqua;
+				font-size: 20px;
+				font-family: ee-icons;
+				font-style: normal;
+				font-weight: 400;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				speak: none;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		}
+	}
+
+	ol {
+		counter-reset: counter;
+		list-style: none;
+		padding-left: 0;
+		margin: 0 0 10px 0;
+
+		li {
+			counter-increment: counter;
+			position: relative;
+			padding: 20px 0 20px 68px;
+			min-height: 85px;
+
+			& + li {
+				border-top: 1px dotted $color-grey;
+			}
+
+			&:after {
+				content: counter(counter);
+				position: absolute;
+				color: $color-grey;
+				width: 50px;
+				text-align: center;
+				top: 33px;
+				left: 0;
+				font-size: 18px;
+			}
+
+			&:before {
+				content: ' ';
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				display: block;
+				background: url(../../images/core/hexagon.svg) no-repeat;
+				background-size: 96%;
+				left: 0;
+				top: 20px;
+				color: $color-aqua;
+			}
+
+			&:first-child {
+				padding-top: 0;
+				min-height: 65px;
+
+				&:before {
+					top: 0;
+				}
+
+				&:after {
+					top: 13px;
+				}
+			}
+
+			&:last-child {
+				padding-bottom: 0;
+				min-height: 65px;
+			}
+
+			a {
+				&:after {
+					content: '>';
+					font-weight: 700;
+					margin-left: 5px;
+					display: inline-block;
+					line-height: 21px;
+					width: 21px;
+				}
+			}
+		}
+	}
+}

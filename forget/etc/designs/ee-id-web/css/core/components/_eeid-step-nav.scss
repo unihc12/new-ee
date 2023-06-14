@@ -1,0 +1,64 @@
+.eeid-step-nav {
+	list-style: none;
+	margin: 0 auto;
+	padding: 28px 0;
+	white-space: nowrap;
+
+	&__item {
+		display: inline-block;
+		line-height: 41px;
+		text-align: center;
+		padding: 0 5px;
+		font-weight: 700;
+		font-size: 17px;
+		color: $color-aqua;
+		box-sizing: border-box;
+		@include respond(0, 560) {
+			line-height: 31px;
+			font-size: 14px;
+			padding: 0 5px 0 0;
+		}
+
+		&--active {
+			color: $color-grey-dark;
+			border-color: $color-grey-dark;
+
+			&:before {
+				border-color: $color-grey-dark;
+			}
+
+			&:after {
+				content: '';
+				width: 50%;
+				left: 25%;
+				position: absolute;
+				border-bottom: 2px solid;
+				bottom: 0;
+			}
+		}
+
+		& + & {
+			margin-left: 20px;
+			position: relative;
+			@include respond(0, 560) {
+				margin-left: 5px;
+			}
+
+			&:before {
+				content: '';
+				width: 30px;
+				height: 2px;
+				background: repeating-linear-gradient(to right, $color-aqua, $color-aqua 3px, transparent 3px, transparent 5px);
+				position: absolute;
+				top: 55%;
+				left: -27px;
+				@include respond(0, 560) {
+					left: -10px;
+					width: 4px;
+					top: 50%;
+					background: repeating-linear-gradient(to right, $color-grey, $color-grey 3px, transparent 3px, transparent 5px);
+				}
+			}
+		}
+	}
+}

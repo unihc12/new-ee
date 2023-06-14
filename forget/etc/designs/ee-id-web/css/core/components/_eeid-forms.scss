@@ -1,0 +1,228 @@
+//TODO: rename to _eeid-forms
+// Remove tap highlight on iOS
+input,
+button,
+label {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.eeid-input {
+	font-family: $base-font-family;
+	padding: 14px 12px 13px 12px;
+	font-size: 16px;
+	border: 1px solid $color-grey-light;
+	border-radius: 3px;
+	width: 100%;
+	background-color: $color-white;
+	outline: none;
+	box-shadow: none;
+
+	&:focus {
+		border-color: $color-aqua-dark;
+		outline: none;
+		box-shadow: none;
+	}
+
+	&[disabled],
+	&.disabled,
+	&[readonly],
+	&.readOnly {
+		background: $color-grey-extralight;
+		border: 1px solid $color-grey-light;
+		pointer-events: none;
+	}
+
+	:placeholder {
+		color: $color-placeholder;
+	}
+
+	.intl-tel-input input[type='tel']::placeholder {
+		color: $color-placeholder;
+	}
+}
+
+input::-ms-reveal {
+	display: none;
+}
+
+.link-like-button {
+	@extend .text-cta;
+
+	background: none !important;
+	border: none;
+	padding: 0 !important;
+	font-size: 18px;
+	line-height: 20px;
+	color: $color-aqua;
+
+	&:after {
+		margin-left: 1px;
+	}
+}
+
+button#register-link {
+	font-size: 12pt;
+}
+
+@mixin pointy-hat {
+	&:before {
+		content: '';
+		position: absolute;
+		top: -7px;
+		left: 18px;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-bottom: 7px solid $color-coral;
+		pointer-events: none;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: -6px;
+		left: 18px;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-bottom: 7px solid $color-error-tip-background;
+		pointer-events: none;
+	}
+}
+
+.error-notification {
+	display: none;
+}
+
+.alexa-terms-form .eeid-error {
+	width: 100%;
+}
+
+.alexa-terms-form .eeid-error,
+[data-validation-eeidform] .eeid-error {
+	@include pointy-hat;
+
+	position: relative;
+	display: block;
+	background: url('../../images/core/form-error.png') no-repeat $color-error-tip-background 14px 7px;
+	border-radius: 5px;
+	background-size: 22px;
+	line-height: 20px;
+	opacity: 0;
+	margin: 0;
+	padding: 0;
+	max-height: 0;
+	border: 0 solid transparent;
+	box-sizing: border-box;
+
+	&--visible {
+		opacity: 1;
+		margin: 11px 0;
+		padding: 10px 10px 10px 46px;
+		border: 1px solid $color-coral;
+		max-height: 300px;
+	}
+
+	&--animated {
+		transition:
+			opacity .3s ease,
+			padding .01s .3s ease,
+			border .01s .3s ease,
+			margin .01s .3s ease,
+			max-height .01s .3s ease;
+	}
+}
+
+.form-control {
+	position: relative;
+
+	&__field {
+		margin-top: 5px;
+	}
+}
+
+.form-footer {
+	display: flex;
+
+	@include respond(0, 480) {
+		margin-top: 20px;
+
+		&--buttons-reverse {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	}
+}
+
+.form-link {
+	margin-top: 5px;
+}
+
+.invalid {
+	.form-control:before,
+	&.form-control:before {
+		display: block;
+	}
+
+	&.form-control__field,
+	.form-control__field,
+	.form__group-element .form-control__field {
+		border-color: $color-error-border;
+		outline: none;
+		box-shadow: none;
+
+		&:focus {
+			border-color: $color-error-border;
+			outline: none;
+			box-shadow: none;
+		}
+	}
+}
+
+.show-hide-password {
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 5px;
+	text-transform: uppercase;
+	color: $color-aqua;
+	font-weight: 700;
+	height: 33px;
+	font-size: 14px;
+	padding: 14px 18px 33px 10px;
+
+	&--readOnly {
+		color: $color-grey-dark;
+		opacity: .4;
+	}
+}
+
+input.show-hide-password__input {
+	padding-right: 63px;
+}
+
+@media (max-width: 767px) {
+	.col-span-5 {
+		width: 100% !important;
+	}
+
+	.add-left-margin {
+		margin-left: 4em;
+	}
+}
+
+.capture_input-wrapper input {
+	@extend .eeid-input;
+}
+
+/* stylelint-disable no-descending-specificity */
+.show-checkboxes-errors {
+	.form__check-input {
+		&:valid {
+			& + label {
+				& + .eeid-error {
+					display: none;
+				}
+			}
+		}
+	}
+}
+/* stylelint-enable */

@@ -1,0 +1,113 @@
+//
+// Visual separator with guttering.
+//
+// $style: any border-style value
+// $vertical-margin: a list of three length value pairs (e.g. 1em 2em, 2em 3em, 4em 5em)
+//
+@mixin separator($vertical-margin: false, $style: dotted, $height: 1px) {
+	$svm: nth($vertical-margin, 1);
+	$mvm: nth($vertical-margin, 2);
+	$lvm: nth($vertical-margin, 3);
+
+	display: block;
+	margin: nth($svm, 1) $grid-gutter-small/2 nth($svm, 2);
+	height: $height;
+	border-top: $height $style;
+	@include respond(720) {
+		margin: nth($mvm, 1) $grid-gutter-medium/2 nth($mvm, 2);
+	}
+	@include respond(1200) {
+		margin: nth($lvm, 1) $grid-gutter-large/2 nth($lvm, 2);
+	}
+}
+
+//
+// Visually hide text whilst keeping it accessible
+//
+@mixin hide-text {
+	text-indent: -9999em;
+	overflow: hidden;
+	text-align: left;
+}
+
+//
+// Visually hide any element
+//
+@mixin visually-hidden-base {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+//
+// Visually hide any element but allow it to be focusable
+//
+@mixin visually-hidden-focusable {
+	&:active,
+	&:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+}
+
+//
+// Convenience mixin to allow setting focusable styles using a boolean
+//
+@mixin visually-hidden($focusable: false) {
+	@include visually-hidden-base;
+	@if $focusable {
+		@include visually-hidden-focusable;
+	}
+}
+
+//
+// A pure CSS triangle
+//
+@mixin triangle($size, $color, $direction) {
+	height: 0;
+	width: 0;
+	@if ($direction==up) or ($direction==down) or ($direction==right) or ($direction==left) {
+		border-color: transparent;
+		border-style: solid;
+		border-width: $size / 2;
+		@if $direction==up {
+			border-bottom-color: $color;
+		}
+		@else if $direction==right {
+			border-left-color: $color;
+		}
+		@else if $direction==down {
+			border-top-color: $color;
+		}
+		@else if $direction==left {
+			border-right-color: $color;
+		}
+	}
+	@else if ($direction==up-right) or ($direction==up-left) {
+		border-top: $size solid $color;
+		@if $direction==up-right {
+			border-left: $size solid transparent;
+		}
+		@else if $direction==up-left {
+			border-right: $size solid transparent;
+		}
+	}
+	@else if ($direction==down-right) or ($direction==down-left) {
+		border-bottom: $size solid $color;
+		@if $direction==down-right {
+			border-left: $size solid transparent;
+		}
+		@else if $direction==down-left {
+			border-right: $size solid transparent;
+		}
+	}
+}

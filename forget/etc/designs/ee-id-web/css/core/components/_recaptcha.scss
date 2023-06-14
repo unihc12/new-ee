@@ -1,0 +1,19 @@
+/* Styles for recaptcha.tag */
+
+.captcha-wrapper {
+	min-height: 78px;
+}
+
+#g-recaptcha:focus {
+	outline: .0625rem solid #e9020b;
+	width: auto;
+	display: inline-block;
+}
+
+@media (max-width: 22.5em) {
+	/* under 360px */
+	#g-recaptcha {
+		transform: scale(.87);
+		transform-origin: 0 0;
+	}
+}

@@ -1,0 +1,221 @@
+///* stylelint-disable */
+.cq-wcm-edit .btn[disabled] {
+	pointer-events: auto;
+}
+
+.state-validation-password-popup {
+	.pw-check {
+		display: block !important;
+	}
+
+	#js-help-panels {
+		display: none !important;
+	}
+}
+
+.state-validation-messages {
+	.eeid-error,
+	.error-notification,
+	#forgotten-email-address-popup,
+	#serverErrorWarning,
+	#contactNumberTooltip,
+	.personal-details .pw-check {
+		display: block !important;
+	}
+}
+
+[data-validation-eeidform] .eeid-error {
+	display: none;
+}
+
+.state-validation-messages [data-validation-eeidform] .eeid-error {
+	display: block;
+	opacity: 1;
+	margin: 11px 0;
+	padding: 10px 46px;
+	border: 1px solid $color-coral;
+	max-height: 300px;
+}
+
+.state-tooltips {
+	#confirmationPopup,
+	#contactNumberTooltip,
+	#emailTooltip {
+		display: block !important;
+	}
+
+	.message-panel-container {
+		display: none !important;
+	}
+}
+
+// anonymous resend
+.state-resend-notifications {
+	.preloader,
+	#resendSuccess {
+		display: block !important;
+	}
+
+	#resendEmailFormContainer {
+		display: none;
+	}
+}
+
+// resend
+.cq-wcm-edit.state-email-verification {
+	#resendSuccess {
+		display: block !important;
+	}
+}
+
+//dashboard
+.state-notifications {
+	.preloader,
+	#resendEmailCaptchaForm {
+		display: block !important;
+	}
+}
+
+// others start
+.state-password-reset-notifications .preloader {
+	display: block !important;
+}
+
+.state-display-notifications {
+	.preloader {
+		display: block !important;
+	}
+
+	#verifyEmailContentContainer {
+		display: none !important;
+	}
+}
+
+.state-resend-email-captcha .eeid-collapse__body {
+	display: block !important;
+}
+
+.state-keep-alive-messages {
+	.IMFE-modal-overlay {
+		display: flex !important;
+	}
+
+	.eed-slideout {
+		transform: none !important;
+	}
+}
+
+.state-email-tooltip-popup {
+	#emailTooltip {
+		display: block !important;
+	}
+
+	.message-panel-container {
+		display: none !important;
+	}
+}
+
+.state-resent-email-notification {
+	#verifyEmailContentContainer {
+		display: none !important;
+	}
+
+	#resentEmailNotification,
+	#wrongEmailAddressLink {
+		display: block !important;
+	}
+}
+
+.state-validation-messages #contactNumber-help {
+	display: block !important;
+}
+
+.state-error-email-exist {
+	.message-panel-container {
+		display: none !important;
+	}
+
+	#emailExistsTooltip {
+		display: block !important;
+	}
+}
+
+.state-notifications #duplicatedPasswordError,
+.state-notifications #validPasswordError,
+.state-notifications #securePasswordError,
+.state-notifications #passwordFormatInvalid,
+.state-notifications #somethingsWrong,
+.state-notifications #passwordSetWentWrong,
+.state-error-admin-lock #userblockErrorNotification {
+	display: block !important;
+}
+// other end
+
+//personal details start
+.state-error #requestPWDserverError,
+.state-change-email-notifications .display-messages .preloader,
+.state-change-email-notifications #resendEmailCaptchaForm,
+.state-change-email-form .display-messages .preloader,
+.state-change-password-form .display-messages .preloader,
+.state-contact-number-form .display-messages #requestSessionSpinner,
+.state-contact-number-pin-form .display-messages #sentPinSpinner,
+.state-contact-number-pin-form .display-messages .preloader--done,
+.state-change-email-notifications .display-messages .preloader--done,
+.state-change-email-form .display-messages .preloader--done {
+	display: block !important;
+}
+
+.state-validation-messages .personal-details__group__main,
+.state-change-email-notifications .display-messages .personal-details__group__main,
+.state-change-email-form .display-messages .personal-details__group__main,
+.state-change-password-form .display-messages .personal-details__group__main,
+.state-change-name-form .display-messages .personal-details__group__main,
+.state-contact-number-form .display-messages .personal-details__group__main,
+.state-change-contact-preference-form .display-messages .personal-details__group__main,
+.state-contact-number-pin-form .display-messages .personal-details__group__main {
+	display: none !important;
+}
+
+.state-change-email-notifications .display-messages {
+	.personal-details__group__info-panel,
+	.personal-details-notification-wrapper {
+		display: block !important;
+	}
+}
+
+.state-change-name-form .display-messages .personal-details-notification-wrapper,
+.state-change-contact-preference-form .display-messages .personal-details-notification-wrapper,
+.state-validation-messages .personal-details__group__content,
+.state-change-email-form .display-messages .personal-details__group__content,
+.state-change-password-form .display-messages .personal-details__group__content,
+.state-change-name-form .display-messages .personal-details__group__content,
+.state-contact-number-form .display-messages .personal-details__group__content,
+.state-change-contact-preference-form .display-messages .personal-details__group__content,
+.state-contact-number-pin-form .display-messages .personal-details__group__content,
+.state-validation-messages .personal-details__group__content__form,
+.state-change-email-form .display-messages .personal-details__group__content__form,
+.state-change-password-form .display-messages .personal-details__group__content__form,
+.state-contact-number-form .display-messages #contactNumberNewNumberForm,
+.state-contact-number-pin-form .display-messages #checkYouTextsForm,
+.state-change-email-form .display-messages .confirmation-popup,
+.state-change-password-form .display-messages .confirmation-popup {
+	display: block !important;
+}
+
+.state-contact-number-form .display-messages {
+	.confirmation-popup,
+	#contactNumberTooltip {
+		display: block !important;
+	}
+}
+
+.state-contact-number-pin-form {
+	#checkYouTextsWarning {
+		display: block !important;
+	}
+
+	.ctn-change-code-send-error {
+		display: block !important;
+	}
+}
+//personal details end

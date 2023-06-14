@@ -1,0 +1,498 @@
+/* stylelint-disable no-descending-specificity */
+// For this file the rule is incompatible with theming blocks - cancel connected errors in stylelint
+
+/* ==========================================================================
+   Theming styles
+   ========================================================================== */
+
+//
+// Theming extend styles
+//
+%theme-container-aqua {
+	color: $color-white;
+	background-color: $color-aqua-dark;
+}
+
+%theme-container-yellow {
+	color: $color-grey-dark;
+	background-color: $color-yellow;
+}
+
+%theme-container-grey {
+	color: $color-white;
+	background-color: $color-grey;
+}
+
+%theme-container-ivory {
+	color: $color-grey-dark;
+	background-color: $color-ivory;
+}
+
+%theme-container-ivory-background {
+	color: $color-grey;
+	background-color: $color-ivory-background;
+}
+
+%theme-container-ivory-background-light {
+	color: $color-grey;
+	background-color: $color-ivory-background-light;
+}
+
+%theme-container-white {
+	color: $color-grey;
+	background-color: $color-white;
+}
+
+%theme-button-aqua {
+	color: $color-white !important;
+	background-color: $color-aqua;
+
+	&:hover {
+		background-color: darken($color-aqua, 7%);
+	}
+}
+
+%theme-button-aqua-dark {
+	@extend %theme-button-aqua;
+
+	background-color: $color-aqua-dark;
+
+	&:hover {
+		background-color: darken($color-aqua-dark, 7%);
+	}
+}
+
+%theme-button-white {
+	color: $color-grey !important;
+	background-color: $color-white;
+
+	&:hover {
+		background-color: darken($color-white, 5%);
+	}
+}
+
+%theme-button-border-grey {
+	border: 1px solid $color-grey;
+}
+
+%theme-button-border-aqua {
+	color: $color-aqua;
+	border: 1px solid $color-aqua;
+}
+
+%theme-button-yellow {
+	color: $color-grey-dark !important;
+	background-color: $color-yellow;
+
+	&:hover {
+		background-color: darken($color-yellow, 7%);
+	}
+}
+
+a.button-primary {
+	@extend %theme-button-aqua;
+}
+
+a.button-secondary {
+	@extend %theme-button-white;
+}
+
+.theme-scoop {
+	@include respond(640) {
+		&.theme-standard,
+		&.theme-container > .container {
+			background-position: center center;
+			background-size: cover;
+		}
+
+		&.theme-aqua.theme-standard,
+		&.theme-aqua.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_AQ_768.jpg');
+		}
+
+		&.theme-grey.theme-standard,
+		&.theme-grey.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_GY_768.jpg');
+		}
+
+		&.theme-ivory.theme-standard,
+		&.theme-ivory.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_IV_768.jpg');
+		}
+
+		&.theme-yellow.theme-standard,
+		&.theme-yellow.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_YE_768.jpg');
+		}
+	}
+
+	@include respond(960) {
+		&.theme-aqua.theme-standard,
+		&.theme-aqua.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_AQ_1024.jpg');
+		}
+
+		&.theme-grey.theme-standard,
+		&.theme-grey.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_GY_1024.jpg');
+		}
+
+		&.theme-ivory.theme-standard,
+		&.theme-ivory.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_IV_1024.jpg');
+		}
+
+		&.theme-yellow.theme-standard,
+		&.theme-yellow.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_YE_1024.jpg');
+		}
+	}
+	@include respond(1360) {
+		&.theme-aqua.theme-standard,
+		&.theme-aqua.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_AQ_1360.jpg');
+		}
+
+		&.theme-grey.theme-standard,
+		&.theme-grey.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_GY_1360.jpg');
+		}
+
+		&.theme-ivory.theme-standard,
+		&.theme-ivory.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_IV_1360.jpg');
+		}
+
+		&.theme-yellow.theme-standard,
+		&.theme-yellow.theme-container > .container {
+			background-image: url('../../images/core/scss-src/scoops/SCOOP_YE_1360.jpg');
+		}
+	}
+}
+
+.theme-smartlayer {
+	@include respond(640) {
+		&.theme-standard,
+		&.theme-container > .container {
+			position: relative;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-image: url('../../images/core/scss-src/smart-layer/SMART_LAYER_768.png'); // TODO: SVG
+				background-position: center center;
+
+				.no-svg & {
+					//background-image: url('../../images/core/scss-src/smart-layer/SMART_LAYER_768.png'); // TODO: enable when SVG in use
+				}
+
+				.no-backgroundsize & {}
+			}
+		}
+	}
+
+	&.theme-standard,
+	&.theme-container > .container {
+		&:before {
+			@include respond(800) {
+				background-image: url('../../images/core/scss-src/smart-layer/SMART_LAYER_1024.png'); // TODO: SVG
+				.no-svg & {
+					background-image: url('../../images/core/scss-src/smart-layer/SMART_LAYER_1024.png'); // TODO: enable when SVG in use
+				}
+			}
+			@include respond(1040) {
+				background-image: url('../../images/core/scss-src/smart-layer/SMART_LAYER_1360.png'); // TODO: SVG
+				.no-svg & {
+					background-image: url('../../images/core/scss-src/smart-layer/SMART_LAYER_1360.png'); // TODO: enable when SVG in use
+				}
+			}
+		}
+	}
+}
+
+.theme-smartlayer--masked {
+	> .container {
+		background-image: none !important; // Disable scoop (if any)
+
+		&:before {
+			z-index: 1;
+		}
+	}
+
+	.theme-smartlayer-mask {
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.theme-aqua {
+	&.theme-standard,
+	&.theme-container > .container {
+		@extend %theme-container-aqua;
+	}
+
+	&.theme-smartlayer--masked {
+		.theme-smartlayer-mask {
+			background-color: $color-aqua-dark;
+		}
+	}
+
+	h1,
+	.h1,
+	h2,
+	.h2,
+	a,
+	.highlight,
+	.highlight .text-cta,
+	.highlight .cta-group__link {
+		color: $color-yellow;
+	}
+
+	a:focus {
+		outline-color: $color-white;
+	}
+
+	li a:focus {
+		outline: none;
+		color: $color-aqua-dark;
+		background-color: $color-white;
+	}
+
+	a.button-primary {
+		@extend %theme-button-yellow;
+	}
+
+	.text-cta,
+	.cta-group__link {
+		color: $color-white;
+	} // These selection rule sets have to be separate.
+
+	::selection {
+		color: $color-grey-dark;
+		background: $color-yellow;
+	}
+}
+
+.theme-yellow {
+	&.theme-standard,
+	&.theme-container > .container {
+		@extend %theme-container-yellow;
+	}
+
+	&.theme-smartlayer--masked {
+		.theme-smartlayer-mask {
+			background-color: $color-yellow;
+		}
+	}
+
+	h1,
+	.h1,
+	h2,
+	.h2,
+	h3,
+	.h3,
+	a,
+	.highlight,
+	.highlight .text-cta,
+	.highlight .cta-group__link {
+		color: $color-aqua-dark;
+	}
+
+	a:focus {
+		outline-color: $color-grey-dark;
+	}
+
+	li a:focus {
+		outline: none;
+		color: $color-yellow;
+		background-color: $color-grey-dark;
+	}
+
+	a.button-primary {
+		@extend %theme-button-aqua-dark;
+	}
+}
+
+.theme-grey {
+	&.theme-standard,
+	&.theme-container > .container {
+		@extend %theme-container-grey;
+	}
+
+	&.theme-smartlayer--masked {
+		.theme-smartlayer-mask {
+			background-color: $color-grey;
+		}
+	}
+
+	h1,
+	.h1,
+	h2,
+	.h2,
+	a,
+	.highlight,
+	.highlight .text-cta,
+	.highlight .cta-group__link {
+		color: $color-yellow;
+	}
+
+	a:hover {
+		color: darken($color-yellow, 7%);
+	}
+
+	a:focus {
+		outline-color: $color-white;
+	}
+
+	li a:focus {
+		outline: none;
+		color: $color-grey;
+		background-color: $color-white;
+	}
+
+	a.button-primary {
+		@extend %theme-button-yellow;
+	}
+
+	.text-cta,
+	.cta-group__link {
+		color: $color-white;
+	}
+}
+
+.theme-ivory {
+	&.theme-standard,
+	&.theme-container > .container {
+		@extend %theme-container-ivory;
+	}
+
+	&.theme-smartlayer--masked {
+		.theme-smartlayer-mask {
+			background-color: $color-ivory;
+		}
+	}
+
+	h1,
+	.h1,
+	h2,
+	.h2,
+	h3,
+	.h3,
+	a,
+	.highlight,
+	.highlight .text-cta,
+	.highlight .cta-group__link {
+		color: $color-aqua-dark;
+	}
+
+	a:focus {
+		outline-color: $color-aqua;
+	}
+
+	li a:focus {
+		outline: none;
+		color: $color-white;
+		background-color: $color-aqua;
+	}
+
+	a.button-primary {
+		@extend %theme-button-aqua-dark;
+	}
+}
+
+.theme-ivory-background {
+	&.theme-standard,
+	&.theme-container > .container {
+		@extend %theme-container-ivory-background;
+	}
+
+	h3,
+	.h3,
+	a,
+	.highlight,
+	.highlight .text-cta,
+	.highlight .cta-group__link {
+		color: $color-aqua;
+	}
+
+	a:focus {
+		outline-color: $color-aqua;
+	}
+
+	li a:focus {
+		outline: none;
+		color: $color-white;
+		background-color: $color-aqua;
+	}
+
+	a.button-secondary {
+		@extend %theme-button-white;
+		@extend %theme-button-border-grey;
+	}
+}
+
+.theme-ivory-background-light {
+	&.theme-standard,
+	&.theme-container > .container {
+		@extend %theme-container-ivory-background-light;
+	}
+
+	h3,
+	.h3,
+	a,
+	.highlight,
+	.highlight .text-cta,
+	.highlight .cta-group__link {
+		color: $color-aqua;
+	}
+
+	a:focus {
+		outline-color: $color-aqua;
+	}
+
+	li a:focus {
+		outline: none;
+		color: $color-white;
+		background-color: $color-aqua;
+	}
+
+	a.button-secondary {
+		@extend %theme-button-white;
+		@extend %theme-button-border-grey;
+	}
+}
+
+.theme-white {
+	&.theme-standard,
+	&.theme-container > .container {
+		@extend %theme-container-white;
+	}
+
+	h3,
+	.h3,
+	a,
+	.highlight,
+	.highlight .text-cta,
+	.highlight .cta-group__link {
+		color: $color-aqua;
+	}
+
+	a:focus {
+		outline-color: $color-aqua;
+	}
+
+	li a:focus {
+		outline: none;
+		color: $color-white;
+		background-color: $color-aqua;
+	}
+
+	a.button-secondary {
+		@extend %theme-button-white;
+		@extend %theme-button-border-grey;
+	}
+}

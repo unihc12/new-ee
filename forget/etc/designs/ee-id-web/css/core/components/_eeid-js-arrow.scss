@@ -1,0 +1,12 @@
+.eeid-js-arrow {
+	&__chevron {
+		width: 21px;
+		line-height: 21px;
+		display: inline-block;
+		text-align: center;
+
+		&.is-active {
+			transform: rotate(90deg);
+		}
+	}
+}

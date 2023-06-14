@@ -1,0 +1,379 @@
+/* ==========================================================================
+   Base styles
+   ========================================================================== */
+
+/**
+ * Carefully selected global overrides.
+ *
+ * 1. paulirish.com/2012/box-sizing-border-box-ftw/
+ * 2. Used more often than repeat values.
+ */
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+	color: $color-grey-dark;
+}
+
+html {
+	font-size: 100% * ($base-font-size / 16px);
+	font-family: $base-font-family;
+	line-height: 1.5;
+	background-color: $color-ivory-background;
+}
+
+body {
+	font-size: $base-font-size-medium;
+	overflow-x: hidden;
+}
+
+p,
+ul,
+ol {
+	margin: 1em 0;
+
+	&.no-margin {
+		margin: 0;
+	}
+}
+
+p {
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&:empty {
+		display: none;
+	}
+}
+
+ol,
+ul {
+	padding-left: 2.5em;
+}
+
+ul.unstyled,
+ol.unstyled {
+	list-style: none;
+}
+
+nav {
+	ul {
+		@include no-bullets;
+
+		padding: 0;
+	}
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+a {
+	color: $color-aqua;
+	text-decoration: none;
+
+	&:hover {
+		color: $color-aqua-dark;
+	}
+
+	&:focus {
+		outline: 2px dotted;
+		border-bottom: none;
+	}
+}
+
+.text-cta {
+	@include text-cta;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-weight: 400;
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+	font-weight: 100; // Nobblee Light by default
+}
+
+h3,
+.h3 {
+	font-weight: 700; // Rubrik Semibold by default
+	@include heading(3, true, false);
+}
+
+h1,
+.h1 {
+	@include heading(1, true, false);
+}
+
+h2,
+.h2 {
+	@include heading(2, true, false);
+}
+
+h4,
+.h4 {
+	@include heading(4, true, false);
+}
+
+h5,
+.h5 {
+	@include heading(5, true, false);
+}
+
+h6,
+.h6 {
+	@include heading(6, true, false);
+}
+
+h2 + h3,
+h2 + .h3,
+.h2 + h3,
+.h2 + .h3 {
+	margin-top: convert-to-em(-8px, 18px);
+}
+
+header {
+	h1,
+	.h1,
+	h2,
+	.h2 {
+		margin-top: 0;
+	}
+}
+
+input,
+select,
+textarea {
+	// http://stevenosloan.com/articles/2013/prevent-zooming-on-forms/
+	font-size: convert-to-em(16px, 14px); // 16px in ems with 14px as the base
+}
+
+@include respond(720) {
+	body {
+		font-size: $base-font-size-medium;
+	}
+
+	h1,
+	.h1 {
+		margin: nth($headings-margin-medium, 1);
+		font-size: nth($headings-font-size-medium, 1);
+	}
+
+	h2,
+	.h2 {
+		margin: nth($headings-margin-medium, 2);
+		font-size: nth($headings-font-size-medium, 2);
+	}
+
+	h3,
+	.h3 {
+		margin: nth($headings-margin-medium, 3);
+		font-size: nth($headings-font-size-medium, 3);
+	}
+
+	h4,
+	.h4 {
+		margin: nth($headings-margin-medium, 4);
+		font-size: nth($headings-font-size-medium, 4);
+	}
+
+	h5,
+	.h5 {
+		margin: nth($headings-margin-medium, 5);
+		font-size: nth($headings-font-size-medium, 5);
+	}
+
+	h6,
+	.h6 {
+		margin: nth($headings-margin-medium, 6);
+		font-size: nth($headings-font-size-medium, 6);
+	}
+
+	h2 + h3,
+	h2 + .h3,
+	.h2 + h3,
+	.h2 + .h3 {
+		margin-top: convert-to-em(-8px, 20px);
+	}
+
+	input,
+	select,
+	textarea {
+		font-size: $base-font-size-medium;
+	}
+}
+
+/**
+ * These selection rule sets have to be separate.
+ *
+ * 1. Remove text-shadow in selection highlight: h5bp.com/i
+ */
+
+::selection {
+	color: $color-white;
+	background: $color-aqua;
+	text-shadow: none;
+}
+
+/**
+ * Utility classes
+ */
+
+.assistive-text {
+	@include visually-hidden-base;
+}
+
+.assistive-text--focusable {
+	@include visually-hidden-focusable;
+}
+
+.center {
+	text-align: center;
+}
+
+.justify-center {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.no-text-transform {
+	text-transform: none;
+}
+
+.text-bold {
+	font-weight: 700;
+}
+
+.text-light {
+	font-weight: 100;
+}
+
+.highlight,
+.text-highlight,
+.brand-ee {
+	color: $color-aqua;
+}
+
+.brand-orange {
+	color: $color-brand-orange;
+}
+
+.brand-tmobile {
+	color: $color-brand-tmobile;
+}
+
+// Dynamically create text-indent classes
+$text-indent: 30;
+
+@while $text-indent <=150 {
+	.text-indent-#{$text-indent} {
+		text-indent: convert-to-em($text-indent * 1px);
+	}
+	$text-indent: $text-indent+10;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * 1. Ensure images scale and retain their aspect ratio.
+ * 2. http://www.456bereastreet.com/archive/201202/using_max-width_on_images_can_make_them_disappear_in_ie8/
+ */
+
+iframe {
+	border: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+	vertical-align: middle;
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+
+	.lt-ie9 & {
+		width: auto;
+	}
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+table {
+	width: 100%;
+}
+
+/* ==========================================================================
+   Containers
+   ========================================================================== */
+
+main,
+section {
+	@include pie-clearfix;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.visuallyhidden {
+	@include visually-hidden;
+}
+
+.clearfix,
+.group {
+	@include pie-clearfix;
+}
+
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+.bg-white {
+	background-color: $color-white;
+}
+
+@include media-object-with-guttering;

@@ -1,0 +1,168 @@
+// @description converts 1 or more characters into a unicode 
+// @markup {scss}
+// unicode("e655"); // "\e655"
+@function unicode($str) {
+	@return unquote('\"') + unquote(str-insert($str, '\\', 1)) + unquote('\"');
+}
+
+$ee-icon-1gb:                    unicode('e06e');
+$ee-icon-3g:                     unicode('e06d');
+$ee-icon-3gb:                    unicode('e06c');
+$ee-icon-4g:                     unicode('e06b');
+$ee-icon-4gee:                   unicode('e06a');
+$ee-icon-4geeresumptive:         unicode('e069');
+$ee-icon-4geestreaming:          unicode('e068');
+$ee-icon-500mb:                  unicode('e065');
+$ee-icon-5gb:                    unicode('e067');
+$ee-icon-8gb:                    unicode('e066');
+$ee-icon-accountsbilling:        unicode('e064');
+$ee-icon-addons:                 unicode('e063');
+$ee-icon-apps:                   unicode('e062');
+$ee-icon-articles:               unicode('e600');
+$ee-icon-audio:                  unicode('e061');
+$ee-icon-backfast:               unicode('e060');
+$ee-icon-basket:                 unicode('e05f');
+$ee-icon-battery:                unicode('e05e');
+$ee-icon-bluetooth:              unicode('e05d');
+$ee-icon-bottom:                 unicode('e05c');
+$ee-icon-broadband:              unicode('e045');
+$ee-icon-business:               unicode('e046');
+$ee-icon-calendar:               unicode('e602');
+$ee-icon-calendar12:             unicode('e047');
+$ee-icon-calendar18:             unicode('e048');
+$ee-icon-calendar24:             unicode('e049');
+$ee-icon-camera:                 unicode('e04a');
+$ee-icon-chat:                   unicode('e04b');
+$ee-icon-chevronback:            unicode('e04c');
+$ee-icon-chevrondown:            unicode('e04d');
+$ee-icon-chevronnext:            unicode('e04e');
+$ee-icon-chevronup:              unicode('e04f');
+$ee-icon-cinema:                 unicode('e050');
+$ee-icon-clockcircle:            unicode('e60f');
+$ee-icon-clonephone:             unicode('e051');
+$ee-icon-close:                  unicode('e052');
+$ee-icon-community:              unicode('e053');
+$ee-icon-connectivity:           unicode('e054');
+$ee-icon-contact:                unicode('e055');
+$ee-icon-contactless:            unicode('e056');
+$ee-icon-contactus:              unicode('e057');
+$ee-icon-coverage:               unicode('e058');
+$ee-icon-cross:                  unicode('e059');
+$ee-icon-data:                   unicode('e603');
+$ee-icon-datapass:               unicode('e05a');
+$ee-icon-devicehelp:             unicode('e05b');
+$ee-icon-document:               unicode('e601');
+$ee-icon-download:               unicode('e044');
+$ee-icon-educate:                unicode('e043');
+$ee-icon-email:                  unicode('e042');
+$ee-icon-exclamationcircle:      unicode('e60e');
+$ee-icon-explore:                unicode('e041');
+$ee-icon-facebook:               unicode('e040');
+$ee-icon-features:               unicode('e03f');
+$ee-icon-filmee:                 unicode('e03e');
+$ee-icon-filmstore:              unicode('e03d');
+$ee-icon-findstore:              unicode('e03c');
+$ee-icon-flightmode:             unicode('e03b');
+$ee-icon-forwardfast:            unicode('e03a');
+$ee-icon-gaming:                 unicode('e039');
+$ee-icon-gb:                     unicode('e604');
+$ee-icon-gbpound:                unicode('e60a');
+$ee-icon-gift:                   unicode('e605');
+$ee-icon-grid:                   unicode('e06f');
+$ee-icon-home:                   unicode('e038');
+$ee-icon-informationcircle:      unicode('e037');
+$ee-icon-innovation:             unicode('e036');
+$ee-icon-international:          unicode('e60b');
+$ee-icon-internettethering:      unicode('e035');
+$ee-icon-like:                   unicode('e034');
+$ee-icon-linkedin:               unicode('e033');
+$ee-icon-list:                   unicode('e070');
+$ee-icon-login:                  unicode('e032');
+$ee-icon-loststolen:             unicode('e031');
+$ee-icon-mb:                     unicode('e030');
+$ee-icon-membership:             unicode('e02f');
+$ee-icon-mins:                   unicode('e02e');
+$ee-icon-minus:                  unicode('e017');
+$ee-icon-music:                  unicode('e018');
+$ee-icon-musicstore:             unicode('e019');
+$ee-icon-new:                    unicode('e01a');
+$ee-icon-numbers:                unicode('e01b');
+$ee-icon-outbox:                 unicode('e01c');
+$ee-icon-padlock:                unicode('e606');
+$ee-icon-pause:                  unicode('e01d');
+$ee-icon-paybycreditcard:        unicode('e01e');
+$ee-icon-paybydirectdebit:       unicode('e01f');
+$ee-icon-personalise:            unicode('e020');
+$ee-icon-phone:                  unicode('e021');
+$ee-icon-phoneandtablets:        unicode('e022');
+$ee-icon-photo:                  unicode('e023');
+$ee-icon-pinlocation:            unicode('e024');
+$ee-icon-play:                   unicode('e025');
+$ee-icon-playcircle:             unicode('e5f0');
+$ee-icon-playcirclesolid:        unicode('e607');
+$ee-icon-plus:                   unicode('e026');
+$ee-icon-pound:                  unicode('e60a');
+$ee-icon-power:                  unicode('e027');
+$ee-icon-priceplans:             unicode('e608');
+$ee-icon-print:                  unicode('e028');
+$ee-icon-processing:             unicode('e029');
+$ee-icon-quote:                  unicode('e603');
+$ee-icon-readmorebook:           unicode('e02a');
+$ee-icon-reviewpen:              unicode('e02b');
+$ee-icon-roaming:                unicode('e02c');
+$ee-icon-safetysecurity:         unicode('e02d');
+$ee-icon-search:                 unicode('e016');
+$ee-icon-service:                unicode('e015');
+$ee-icon-sharer:                 unicode('e609');
+$ee-icon-simcard:                unicode('e014');
+$ee-icon-size:                   unicode('e013');
+$ee-icon-social:                 unicode('e011');
+$ee-icon-speed:                  unicode('e012');
+$ee-icon-stop:                   unicode('e010');
+$ee-icon-support:                unicode('e00f');
+$ee-icon-surfmore:               unicode('e00e');
+$ee-icon-talkmore:               unicode('e00c');
+$ee-icon-tc:                     unicode('e00d');
+$ee-icon-texts:                  unicode('e00b');
+$ee-icon-tick:                   unicode('e00a');
+$ee-icon-tickcircle:             unicode('e60d');
+$ee-icon-tickinbox:              unicode('e009');
+$ee-icon-top:                    unicode('e008');
+$ee-icon-trash:                  unicode('e007');
+$ee-icon-tv:                     unicode('e006');
+$ee-icon-twitter:                unicode('e005');
+$ee-icon-voip:                   unicode('e004');
+$ee-icon-wallet:                 unicode('e003');
+$ee-icon-warning:                unicode('e002');
+$ee-icon-welcome:                unicode('e001');
+$ee-icon-wificalling:            unicode('e60c');
+$ee-icon-youtube:                unicode('e000');
+
+@mixin ee-icon-font($ee-icon: false, $font-styles: true) {
+	@if $font-styles {
+		font-family: ee-icons;
+		font-style: normal;
+		font-weight: 400;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		speak: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	@if $ee-icon {
+		content: $ee-icon;
+	}
+}
+
+@mixin ee-icon-font-medium($ee-icon: false, $font-styles: true) {
+	@include ee-icon-font($ee-icon, $font-styles);
+
+	font-size: 1.5em;
+}
+
+@mixin ee-icon-font-large($ee-icon: false, $font-styles: true) {
+	@include ee-icon-font($ee-icon, $font-styles);
+
+	font-size: 2.5em;
+}

@@ -1,0 +1,87 @@
+@import '../abstracts/utilities';
+@import '../abstracts/variables';
+@import '../abstracts/units';
+@import '../abstracts/grid';
+@import '../abstracts/icon-font';
+@import '../abstracts/media';
+@import '../abstracts/misc';
+@import '../abstracts/respond';
+@import '../abstracts/typography';
+@import '../base/colors';
+
+#IMFEKeepAliveModal {
+	&.IMFE-modal-overlay {
+		display: none;
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, .7);
+		z-index: 100000000;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	.IMFE-modal {
+		@include respond(800) {
+			width: 600px;
+		}
+
+		@include respond(800, 1200) {
+			margin-top: 16vh;
+		}
+
+		@include respond(1200) {
+			margin-top: 210px;
+		}
+
+		font-family: $base-font-family;
+		margin-top: 40px;
+		padding: 16px 22px;
+		box-sizing: border-box;
+		background: $color-white;
+		overflow-y: auto;
+		max-height: 80vh;
+		max-width: calc(100% - 20px);
+
+		&__header {
+			font-size: 20px;
+			padding-bottom: 15px;
+		}
+
+		&__body {
+			color: $color-grey;
+
+			&--counter p {
+				display: inline;
+			}
+		}
+
+		&__footer {
+			display: flex;
+			padding: 19px 0 6px 0;
+
+			@include respond(0, 400) {
+				flex-direction: column-reverse;
+
+				& .btn:first-child {
+					margin-top: 1rem !important;
+				}
+			}
+		}
+	}
+
+	.ksa-counter {
+		color: $color-coral;
+		font-weight: 700;
+	}
+
+	.btn {
+		cursor: pointer;
+
+		@include respond(0, 784) {
+			margin-left: .5rem !important;
+		}
+	}
+}

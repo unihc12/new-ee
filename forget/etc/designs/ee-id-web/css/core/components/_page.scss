@@ -1,0 +1,104 @@
+.page {
+	padding-top: 30px;
+
+	&__title {
+		font-size: 20px;
+		margin-bottom: 12px;
+		margin-top: 3px;
+	}
+
+	&__subtitle {
+		margin-bottom: 20px;
+	}
+
+	&__info-msg {
+		margin: 15px 0;
+		padding: 0 15px;
+	}
+
+	&-panel {
+		@include paper;
+
+		margin-bottom: 20px;
+
+		@include respond(0, 800) {
+			width: 100%;
+
+			&.span-3,
+			&.span-9 {
+				width: 100%;
+			}
+		}
+		@include respond(560) {
+			padding-top: 14px;
+		}
+
+		&__header {
+			padding: 10px 0 20px;
+			font-size: 20px;
+
+			h5,
+			h4,
+			h3,
+			h2,
+			p {
+				margin: 0;
+			}
+		}
+
+		&__info-item {
+			margin-bottom: 10px;
+			color: $color-grey;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__bordered-row {
+			border-top: 1px dotted $color-grey-medium;
+			border-bottom: 1px dotted $color-grey-medium;
+			margin-top: -1px;
+			padding: 18px 0;
+			word-break: break-word;
+		}
+
+		&__product {
+			background-color: $color-grey-extralight;
+			padding: 0;
+		}
+	}
+
+	&-container {
+		&--equals-height {
+			@include equals-height;
+			@include respond(800) {
+				.page-panel {
+					margin-bottom: 0;
+					display: table-cell;
+				}
+			}
+		}
+
+		&--reverse {
+			@include reverse-columns;
+		}
+	}
+
+	.link-word-break {
+		word-break: break-word;
+		overflow-wrap: break-word;
+
+		.icon-link {
+			padding-left: 0;
+
+			& .icon-link__icon {
+				float: left;
+			}
+
+			& p {
+				padding-left: 24px;
+			}
+		}
+	}
+}

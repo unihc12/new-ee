@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Error block
+   ========================================================================== */
+
+.error-block {
+	margin-bottom: 2em;
+	padding: 2em;
+	border: 1px solid $color-grey-light;
+	border-radius: $base-border-radius;
+	color: $color-error;
+	background-color: $color-error-background;
+
+	ul {
+		@include no-bullets;
+
+		margin-bottom: 0;
+		padding: 0;
+
+		li {
+			display: block;
+			margin: 1em 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.error-block__heading {
+	margin-top: 0;
+	font-weight: 700;
+}
+
+.error-block__icon {
+	margin-right: .5em;
+}

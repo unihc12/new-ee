@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Inline theming styles
+   ========================================================================== */
+
+section,
+div,
+li {
+	&.aqua {
+		@extend %theme-container-aqua;
+	}
+
+	&.grey {
+		@extend %theme-container-grey;
+	}
+
+	&.yellow {
+		@extend %theme-container-yellow;
+	}
+
+	&.white {
+		@extend %theme-container-white;
+
+		a.button-secondary {
+			@extend %theme-button-border-grey;
+		}
+	}
+}
+
+a,
+p,
+span,
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+	&.aqua {
+		color: $color-aqua;
+	}
+
+	&.grey {
+		color: $color-grey;
+	}
+
+	&.white {
+		color: $color-white;
+	}
+
+	&.yellow {
+		color: $color-yellow;
+	}
+}
+
+a {
+	&.aqua {
+		color: $color-white;
+		background: $color-aqua;
+
+		&:hover {
+			background: darken($color-aqua, 7%);
+		}
+	}
+
+	&.white {
+		color: $color-aqua;
+		background: $color-white;
+
+		&:hover {
+			background: darken($color-white, 5%);
+		}
+	}
+
+	&.yellow {
+		color: $color-grey-dark;
+		background: $color-yellow;
+
+		&:hover {
+			background: darken($color-yellow, 7%);
+		}
+	}
+}
+
+a.button {
+	&.aqua {
+		@extend %theme-button-aqua;
+	}
+
+	&.white {
+		@extend %theme-button-white;
+	}
+
+	&.yellow {
+		@extend %theme-button-yellow;
+	}
+}
+
+section.aqua div.white,
+div.aqua div.white {
+	color: $color-grey-dark;
+}

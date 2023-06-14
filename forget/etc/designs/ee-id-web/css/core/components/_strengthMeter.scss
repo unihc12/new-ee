@@ -1,0 +1,70 @@
+input.poorStrength,
+input.poorStrength:focus,
+.EE .form__control.poorStrength,
+.EE .form__control.poorStrength:focus {
+	border-color: $notification-red;
+}
+
+.form__strengthMeter {
+	font-size: .875rem;
+	font-weight: 600;
+	transition: opacity 200ms;
+}
+
+.strengthValue {
+	display: inline-block;
+}
+
+.strengthMeter {
+	height: 10px;
+	border: .0625rem solid $color-new-stone;
+	background-color: $color-white;
+	position: relative;
+	border-radius: 7px;
+	overflow: hidden;
+	clear: both;
+}
+
+.tip {
+	color: $notification-red;
+	font-size: 1rem;
+	line-height: 1.5;
+	min-height: 22px;
+	font-weight: 400;
+
+	.form__group-element--error &,
+	.form__group-element--error + .form__strengthMeter & {
+		display: none;
+	}
+}
+
+.form__label_description {
+	color: $color-new-slate;
+	padding-bottom: .5rem;
+	font-size: .875rem;
+	line-height: 1.42857;
+	display: none;
+
+	.EE & p { // fix the global behaviour
+		font-size: inherit;
+		line-height: inherit;
+	}
+}
+
+.strengthMeterValue {
+	width: 0;
+	background-color: $notification-red;
+	top: 0;
+	left: 0;
+	position: absolute;
+	bottom: 0;
+	transition: width 100ms ease;
+}
+
+.average .strengthMeterValue {
+	background-color: $color-new-yellow;
+}
+
+.good .strengthMeterValue {
+	background-color: $color-valid;
+}

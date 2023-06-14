@@ -1,0 +1,31 @@
+/// Removes the unit from a value
+///
+/// @param {Length} $value - Pixel Value where unit to be stripped.
+///
+/// @example scss - usage
+/// strip-unit(16px);
+/// 16 - Removes px from 16px;
+@function strip-unit($num) {
+	@return ($num / ($num * 0 + 1));
+}
+
+/// Converts pixel values to ems
+///
+/// @param {Length} $value - Pixel Value to be converted to em
+/// @param {Length} $base-value - optional; default value will be $base-font-size
+///
+/// @example scss - usage
+/// .h2 {
+/// font-size: convert-to-em(16px);
+/// }
+//
+/// .h3 {
+/// margin-top: convert-to-em(-8px, 20px);
+/// }
+@function convert-to-em($value, $base-value: $base-font-size) {
+	$value: (strip-unit($value) / strip-unit($base-value) * 1em);
+	@if ($value==0em) {
+		$value: 0;
+	} // Turn 0em into 0
+	@return $value;
+}

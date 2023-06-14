@@ -1,0 +1,59 @@
+.eeid-radio-btn {
+	margin-bottom: 9px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	input[type=radio] {
+		position: absolute;
+		top: 0;
+		left: -9999px;
+		opacity: 0;
+	}
+
+	label {
+		display: block;
+		box-sizing: border-box;
+		word-break: break-all;
+	}
+
+	input[type=radio]:not(checked) + label {
+		padding-left: 33px;
+		cursor: pointer;
+		font-weight: 700;
+		color: $color-aqua;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: -1px;
+			left: 0;
+			display: block;
+			box-sizing: border-box;
+			border-radius: 50%;
+			width: 24px;
+			height: 24px;
+			background-color: $color-white;
+			border: 1px solid $color-grey-light;
+		}
+	}
+
+	input[type=radio]:checked + label {
+		&:after {
+			content: '';
+			position: absolute;
+			top: 6px;
+			left: 7px;
+			display: block;
+			border-radius: 50%;
+			width: 10px;
+			height: 10px;
+			background-color: $color-aqua;
+		}
+	}
+
+	input[type=radio]:disabled + label {
+		color: $color-grey-light;
+	}
+}

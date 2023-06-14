@@ -1,0 +1,222 @@
+//  Base grid styles
+
+.module {
+	@include respond(960) {
+		margin: 4em 0;
+	}
+
+	margin: 2em 0;
+}
+
+.container {
+	@include pie-clearfix;
+	@include respond(560) {
+		margin: 0 $grid-outer-margin-medium;
+	}
+
+	@include respond(720) {
+		margin: 0 $grid-outer-margin-large;
+		padding: $grid-gutter-medium/2;
+	}
+
+	@include respond(1200) {
+		margin: 0 $grid-outer-margin-xlarge;
+		padding: $grid-gutter-large/2;
+	}
+
+	@include respond(1340) {
+		// Transition to a margin-auto centred main column.
+		// Uses a non-standard (non multiple of 80) breakpoint to alleviate jerky transition bug
+		margin: 0 auto;
+	}
+
+	max-width: $grid-container-max-width;
+	margin: 0 $grid-outer-margin-small;
+	padding: $grid-gutter-small/2;
+	word-wrap: break-word;
+
+	.lt-ie9 & {
+		// IE8 border-box bug - padding, is added on not taken away from, width so
+		// we need to compensate. Use largest gutter value.
+		max-width: $grid-container-max-width - $grid-gutter-large;
+	}
+}
+
+.col {
+	@include guttering(padding, true);
+
+	float: left;
+	width: 100%;
+
+	&.nest {
+		padding: 0;
+	}
+}
+
+.panel {
+	position: relative;
+
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.panels {
+	@include respond(720) {
+		margin: -$grid-gutter-medium 0;
+	}
+
+	@include respond(1200) {
+		margin: -$grid-gutter-large 0;
+	}
+
+	@include respond(0, 560) {
+		.container,
+		.col {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	margin: -$grid-gutter-small 0;
+
+	.panel {
+		@include respond(720) {
+			margin-bottom: $grid-gutter-medium;
+			padding: $grid-gutter-medium;
+		}
+
+		@include respond(1200) {
+			margin-bottom: $grid-gutter-large;
+			padding: $grid-gutter-large;
+		}
+
+		margin-bottom: $grid-gutter-small;
+		padding: $grid-gutter-small;
+	} // Ensures we don't bother putting a margin on panel bottom
+	// if it is the only panel in the column
+	// (col spacing will take care of vert alignment instead)
+	.col .panel:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.nopadding {
+	&,
+	.col {
+		padding: 0 !important;
+	}
+}
+
+.span-1 {
+	@include respond(720) {
+		@include span-columns(1);
+	}
+}
+
+.span-2 {
+	@include respond(720) {
+		@include span-columns(2);
+	}
+}
+
+.span-3 {
+	@include respond(560) {
+		@include span-columns(6);
+	}
+
+	@include respond(720) {
+		@include span-columns(3);
+	}
+}
+
+.span-4 {
+	@include respond(720) {
+		@include span-columns(4);
+	}
+}
+
+.span-5 {
+	@include respond(720) {
+		@include span-columns(5);
+	}
+}
+
+.span-6 {
+	@include respond(560) {
+		@include span-columns(6);
+	}
+}
+
+.span-7 {
+	@include respond(720) {
+		@include span-columns(7);
+	}
+}
+
+.span-8 {
+	@include respond(720) {
+		@include span-columns(8);
+	}
+}
+
+.span-9 {
+	@include respond(560) {
+		@include span-columns(6);
+	}
+
+	@include respond(720) {
+		@include span-columns(9);
+	}
+
+	+ .span-3 {
+		@include respond(560) {
+			@include span-columns(6);
+		}
+
+		@include respond(720) {
+			@include span-columns(3);
+		}
+	}
+}
+
+.span-3 + .span-9 {
+	@include respond(560) {
+		@include span-columns(6);
+	}
+
+	@include respond(720) {
+		@include span-columns(9);
+	}
+}
+
+.span-10 {
+	@include respond(720) {
+		@include span-columns(10);
+	}
+}
+
+.span-11 {
+	@include respond(720) {
+		@include span-columns(11);
+	}
+}
+
+@media print {
+	.module {
+		margin: 2em 0;
+	}
+
+	.container {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.flex-no-shrink {
+	flex-shrink: 0;
+}

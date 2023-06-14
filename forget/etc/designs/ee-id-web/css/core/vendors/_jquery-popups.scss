@@ -1,0 +1,362 @@
+/* *
+ * @file: jquery.popups.css
+ *
+ * Styling for popups.
+ */
+.popup-container {
+	position: relative;
+	display: inline-block;
+}
+
+/* By default, we position the popups directly below the popup link, and expand
+   it inline to push content down the page; this is the desired behaviour for
+   mobile viewports. See below for definitions for desktop browsers. */
+.popup {
+	position: relative;
+	display: none;
+	background-color: $color-white;
+	margin: 1em auto;
+	border: $color-aqua-dark 2px solid;
+	padding: 1em;
+	text-align: left;
+	z-index: 10000; /* One meeeeeelion </Dr Evil> */
+}
+
+/* Callouts, with thanks, love, hugs and slobbery kisses to
+   http://nicolasgallagher.com/pure-css-speech-bubbles/demo
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.popup:before {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-color: $color-aqua-dark transparent;
+
+	/* reduce the damage in FF3.0 */
+	display: block;
+	width: 0;
+	top: -15px;
+	bottom: auto;
+	left: 186px;
+	right: auto;
+	border-width: 0 15px 15px;
+}
+
+/* creates the smaller  triangle */
+.popup:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-color: $color-white transparent;
+
+	/* reduce the damage in FF3.0 */
+	display: block;
+	width: 0;
+	top: -12px;
+	bottom: auto;
+	left: 188px;
+	right: 47px;
+	border-width: 0 13px 13px;
+}
+
+/* Variant : top
+------------------------------------------ */
+
+.popup--expanded {
+	float: left;
+	width: 206%;
+}
+
+.inlife .popup--expanded,
+.noassociation .popup--expanded {
+	float: left;
+	width: 202% !important;
+}
+
+.popup--expanded .col {
+	padding: 0;
+}
+
+@media (min-width: 65em) {
+	.popup {
+		position: absolute;
+		top: -28px;
+
+		/* 		transform: translateY(-50%); */
+		left: 120%;
+	}
+
+	/* Style the popups with the triangle on the left */
+
+	/* creates the larger triangle */
+	.popup:before {
+		top: 10px; /* controls vertical position */
+		bottom: auto;
+		left: -17px; /* value = - border-left-width - border-right-width */
+		border-width: 12px 17px 12px 0;
+		border-color: transparent $color-aqua-dark;
+	}
+
+	/* creates the smaller  triangle */
+	.popup:after {
+		top: 11px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+		bottom: auto;
+		left: -14px; /* value = - border-left-width - border-right-width */
+		border-width: 11px 16px 11px 0;
+		border-color: transparent $color-white;
+	}
+}
+
+.popup-trigger {
+}
+
+.popup-close,
+.popup-close-expander,
+.popup-close-expander3 {
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	z-index: 9999;
+}
+
+.popup-close-expander2 {
+	position: relative;
+	margin-top: 20px;
+}
+
+.popup-close-expander .popup-close-expander2,
+.popup-close-expander3 {
+	display: none;
+}
+
+.popup-close,
+.popup-close a,
+.popup-close-expander,
+.popup-close-expander3,
+.popup-close-expander3 a,
+.popup-close-expander a {
+	color: $color-close-expander-1;
+	text-decoration: none;
+}
+
+.popup-close a,
+.popup-close-expander a,
+.popup-close-expander3 a {
+	border: 2px solid #888;
+	border-radius: 50%;
+	color: $color-close-expander !important;
+	display: inline-block;
+	height: 23px;
+	width: 23px;
+	line-height: 16px;
+	text-align: center;
+	padding: 2px;
+	font-size: 17px;
+	font-weight: 400;
+}
+
+.popup-close-expander2 a:hover,
+.popup-close-expander3 a:hover {
+	z-index: 999;
+}
+
+.popup-close a:hover,
+.popup-close-expander a:hover {
+	border-color: $color-aqua-dark;
+	color: $color-aqua-dark;
+}
+
+#brand-Panel a.button.brand-link {
+	border: 1px solid #d3d4cf !important;
+	display: inline-block;
+	text-align: left;
+	padding: 17px 14px 17px 40%;
+	width: 100%;
+}
+
+#brand-Panel a.button.ee-link {
+	padding: 14px 14px 14px 40%;
+}
+
+#brand-Panel a.button.brand-link.brand-link-tmo {
+	background-color: $color-white !important;
+	background-position: 38% -63px;
+	background-size: 21px auto;
+	height: 70px;
+}
+
+#brand-Panel a.button.brand-link.brand-link-ee {
+	background-color: $color-white !important;
+	background-position: 38% 4px;
+	background-size: 21px auto;
+	color: $color-aqua-dark !important;
+}
+
+#brand-Panel a.button.brand-link.brand-link-ouk {
+	background-color: $color-white !important;
+	background-position: 38% -29px;
+	background-size: 21px auto;
+	height: 70px;
+}
+
+#brand-Panel p {
+	padding: 0 3%;
+}
+
+#brand-panel-expanded {
+	display: none;
+}
+
+#ctn-enter-number-popup {
+	position: relative !important;
+	top: 0 !important;
+	left: 0 !important;
+	z-index: 1;
+	background: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#ctn-enter-number-popup:before {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-color: $color-aqua-dark transparent;
+
+	/* reduce the damage in FF3.0 */
+	display: block;
+	width: 0;
+	top: -15px;
+	bottom: auto;
+	left: 45%; /* states where the outer triangle is positioned horizontally */
+	right: auto;
+	border-width: 0 14px 15px;
+	border: none;
+}
+
+/* creates the smaller  triangle */
+#ctn-enter-number-popup:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-color: $color-white transparent;
+
+	/* reduce the damage in FF3.0 */
+	display: block;
+	width: 0;
+	border: none;
+	top: -12px;
+	bottom: auto;
+	left: 45%; /* states where the inner triangle is positioned horizontally */
+	right: 47px;
+	border-width: 0 13px 13px;
+	border: none;
+}
+
+.popup--expanded#ctn-enter-number-popup:before {
+	left: 21.5%; /* states where the outer triangle is positioned horizontally */
+}
+
+/* creates the smaller  triangle */
+.popup--expanded#ctn-enter-number-popup:after {
+	left: 21.5%; /* states where the inner triangle is positioned horizontally */
+}
+
+#ctn-enter-number-popup .display-captcha:after {
+	display: block !important;
+}
+
+#ctn-enter-number-popup .display-captcha:before {
+	display: block !important;
+}
+
+#ctn-enter-number-popup .popup-close {
+	display: none !important;
+}
+
+@media (max-width: 767px) {
+	/* Put a leash on those expanding popups.  No spilling over here. */
+	.find-your-number-help {
+		position: relative;
+	}
+
+	#find-your-number-expanded-hidden-panel {
+		display: none !important;
+		max-height: 0;
+	}
+
+	.popup--expanded {
+		float: left;
+		width: 100%;
+	}
+
+	.inlife .popup--expanded,
+	.noassociation .popup--expanded {
+		float: left;
+		width: 100% !important;
+	}
+
+	.popup--expanded#ctn-enter-number-popup:before {
+		left: 45%; /* states where the outer triangle is positioned horizontally */
+	}
+
+	/* creates the smaller  triangle */
+	.popup--expanded#ctn-enter-number-popup:after {
+		left: 45%; /* states where the inner triangle is positioned horizontally */
+	}
+
+	#brand-panel-expanded .links-list__links-container {
+		padding: 7% 5% 0 3%;
+	}
+}
+
+@media (min-width: 768px) {
+	.find-your-number-help {
+		position: absolute;
+		top: 18px;
+		right: 0;
+		width: 48% !important;
+	}
+
+	.width46 {
+		width: 49% !important;
+	}
+
+	.floatr_width46 {
+		width: 48% !important;
+		float: right !important;
+	}
+
+	.paddinglr75 {
+		padding: 0 .75em !important;
+	}
+}
+
+.floatr_width46 {
+	width: 100%;
+	float: left;
+}
+
+#brand-panel-expanded .links-list__links-container {
+	padding: 7% 2% 0 9%;
+}
+
+#brand-panel-expanded .links-list > a {
+	float: right;
+}
+
+#brand-Panel {
+	font-family: Rubrik;
+}
+
+#brand-Panel a.button.brand-link:focus,
+#brand-Panel a.button.brand-link:hover {
+	border: 1px solid $color-aqua-dark !important;
+}
+
+@media (min-width: 768px) {
+	#brand-panel-expanded {
+		margin-top: 45px;
+	}
+}

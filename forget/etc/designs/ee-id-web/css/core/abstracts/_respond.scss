@@ -1,0 +1,38 @@
+// Each value is a multiple of 80 except for 784 and 1340 which are a special case
+$valid-breakpoints: 0,320,400,480,560,640,720,784,800,880,960,1040,1120,1200,1280,1340,1360,1440;
+
+// Media query. Converts pixel values to ems
+@mixin respond($min-width, $max-width: false) {
+	$min: false;
+	$max: false;
+	@each $breakpoint in $valid-breakpoints {
+		@if $min-width==$breakpoint {
+			$min: $breakpoint;
+		}
+		@if $max-width==$breakpoint {
+			$max: $breakpoint;
+		}
+	}
+	@if $max {
+		// Reduce max width by 1px to prevent overlap of min/max values
+		$max: $max - 1;
+	}
+	@if ($min and $max) and ($min > $max) {
+		@warn '$min-width value is greater than $max-width value.';
+	}
+	@else if ($min==0 and $max) {
+		@media (max-width: convert-to-em($max)) {
+			@content;
+		}
+	}
+	@else if ($min and $max) {
+		@media (min-width: convert-to-em($min)) and (max-width: convert-to-em($max)) {
+			@content;
+		}
+	}
+	@else if $min {
+		@media (min-width: convert-to-em($min)) {
+			@content;
+		}
+	}
+}

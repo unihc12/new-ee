@@ -1,0 +1,68 @@
+//
+// Variables
+//
+$grid-columns: 12;
+$grid-gutter-small: 1em;
+$grid-gutter-medium: 1.5em;
+$grid-gutter-large: 1.5em; // Was 2em (32px)
+$grid-outer-margin-small: .5em;
+$grid-outer-margin-medium: 1.5em;
+$grid-outer-margin-large: 2em;
+$grid-outer-margin-xlarge: 3em;
+$grid-container-max-width: convert-to-em(1270px);
+//
+// Functions
+//
+@function columns-width($columns, $column-context: $grid-columns) {
+	@return 100% * ($columns / $column-context);
+}
+
+//
+// Mixins
+//
+@mixin guttering($property: padding, $half-gutter: false, $negative: false) {
+	$divisor: if($half-gutter, 2, 1);
+	$sign: if($negative, -1, 1);
+
+	#{$property}: ($grid-gutter-small / $divisor) * $sign;
+	@include respond(720) {
+		#{$property}: ($grid-gutter-medium / $divisor) * $sign;
+	}
+	@include respond(1200) {
+		#{$property}: ($grid-gutter-large / $divisor) * $sign;
+	}
+}
+
+@mixin span-columns($columns, $column-context: $grid-columns, $prefix: false, $suffix: false) {
+	width: columns-width($columns, $column-context);
+	@if $prefix {
+		@include prefix($prefix, $column-context);
+	}
+	@if $suffix {
+		@include suffix($suffix, $column-context);
+	}
+}
+
+// Deprecated: use span-columns instead
+@mixin cols($columns) {
+	@include span-columns($columns);
+}
+
+@mixin prefix($columns, $column-context) {
+	margin-left: columns-width($columns, $column-context);
+}
+
+@mixin suffix($columns, $column-context) {
+	margin-right: columns-width($columns, $column-context);
+}
+
+@mixin container-full-bleed {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@mixin neutralize-container {
+	max-width: none;
+	margin: 0;
+	padding: 0;
+}

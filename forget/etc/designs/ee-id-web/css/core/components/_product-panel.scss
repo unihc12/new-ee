@@ -1,0 +1,234 @@
+/* stylelint-disable no-descending-specificity */
+.product-panel {
+	@include respond(0, 800) {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	display: block;
+	padding: 20px;
+	background-color: $color-ivory-background-light;
+	color: $color-grey;
+	text-align: center;
+	direction: ltr;
+	-webkit-tap-highlight-color: transparent;
+
+	&__header {
+		margin-bottom: 15px;
+		padding: 15px 23px;
+		font-weight: 700;
+
+		&__icon {
+			display: block;
+			font-size: 4em;
+		}
+	}
+
+	//TODO: remove once the is fixed on the SG side
+	& &__header {
+		&__icon {
+			.icon-svg {
+				-webkit-transition: none;
+				transition: none;
+			}
+		}
+	}
+
+	&__body {
+		margin-bottom: 20px;
+		font-weight: 400;
+		min-height: 82px;
+	}
+
+	&__link {
+		color: $color-aqua;
+		margin-bottom: 10px;
+		font-weight: 700;
+
+		& span.EE .icon-svg {
+			transition: none;
+		}
+
+		p {
+			display: inline;
+		}
+	}
+
+	&--disabled {
+		position: relative;
+		color: $color-grey-light;
+		transition: none;
+		pointer-events: none;
+		cursor: default;
+
+		.product-panel__header__icon {
+			.icon-svg {
+				&--teal {
+					fill: $color-grey-light;
+				}
+			}
+		}
+
+		.product-panel__link {
+			color: $color-grey-light;
+
+			.icon-svg {
+				&--teal {
+					fill: $color-grey-light;
+				}
+			}
+		}
+
+		&:hover {
+			@include product-active;
+
+			background-color: $color-ivory-background-light;
+			color: $color-grey-light;
+
+			.product-panel__header__icon {
+				color: $color-grey-light;
+			}
+
+			.product-panel__link {
+				color: $color-grey-light;
+			}
+		}
+	}
+
+	&--active {
+		@include product-active;
+
+		background-color: $color-aqua;
+
+		p {
+			color: $color-white;
+		}
+
+		.product-panel__header {
+			.product-panel__header__icon {
+				.icon-svg {
+					&--teal {
+						fill: $color-white;
+					}
+				}
+			}
+		}
+
+		.product-panel__link {
+			.icon-svg {
+				&--teal {
+					fill: $color-white;
+				}
+			}
+		}
+	}
+
+	&--bordered {
+		border: 2px solid $color-grey-light;
+		border-radius: 5px;
+		background-color: $color-white;
+
+		&:hover {
+			border-color: $color-aqua-dark;
+		}
+	}
+
+	&__description {
+		border-top: 1px dotted $color-grey-medium;
+		padding-top: 20px;
+		margin-bottom: 25px;
+	}
+
+	&__subtitle {
+		font-size: 1em;
+		padding-bottom: 10px;
+	}
+
+	&__account-no {
+		font-size: 16px;
+	}
+
+	&__details {
+		padding: 15px 23px;
+		background-color: $color-ivory-background;
+
+		&__btn {
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__footer {
+		padding: 15px 23px;
+
+		&--top-border {
+			border-top: 1px dotted $color-grey-medium;
+		}
+	}
+
+	&-container {
+		&--equals-height {
+			@include equals-height;
+			@include respond(800) {
+				.product-panel {
+					display: table-cell;
+				}
+			}
+		}
+
+		&--reverse {
+			@include reverse-columns;
+
+			direction: rtl;
+		}
+	}
+
+	&-wrapper {
+		&--two-tiles {
+			max-width: 610px;
+			margin: 0 auto;
+		}
+
+		&--three-tiles {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+	}
+
+	&:hover,
+	&:active {
+		@include product-active;
+
+		background-color: $color-aqua-dark;
+		transition: background-color .4s, border-color .4s;
+
+		.touch & {
+			transition: none;
+		}
+
+		.product-panel {
+			&__link,
+			&__subtitle,
+			&__header {
+				color: $color-white;
+			}
+
+			&__header {
+				&__icon {
+					.icon-svg {
+						&--teal {
+							fill: $color-white;
+						}
+					}
+				}
+			}
+
+			&__link {
+				.icon-svg {
+					fill: $color-white;
+				}
+			}
+		}
+	}
+}

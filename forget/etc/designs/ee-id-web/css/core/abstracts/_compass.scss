@@ -1,0 +1,38 @@
+/* DEL-20843 - Compass Mixins */
+
+@mixin no-bullet {
+	list-style-image: none;
+	list-style-type: none;
+	margin-left: 0;
+}
+
+@mixin no-bullets {
+	list-style: none;
+
+	li {
+		@include no-bullet;
+	}
+}
+
+@mixin clearfix {
+	*zoom: 1;
+}
+
+@mixin pie-clearfix {
+	*zoom: 1;
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	} // @include has-layout;
+}
+
+@mixin overflow-hidden {
+	overflow: hidden;
+}
+
+@mixin reset-table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}

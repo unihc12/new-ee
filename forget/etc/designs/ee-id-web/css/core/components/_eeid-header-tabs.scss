@@ -1,0 +1,35 @@
+.eeid-header-tabs {
+	background-color: $color-white;
+	color: $color-grey;
+	text-align: center;
+
+	&--fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		box-shadow: 2px 4px 25px rgba(0, 0, 0, .5);
+		z-index: 1000;
+	}
+
+	&__tab {
+		display: inline-block;
+		padding: 15px 20px;
+		color: $color-grey-medium;
+		font-weight: 700;
+
+		&--active {
+			color: $color-aqua;
+			position: relative;
+
+			&:after {
+				content: '';
+				width: 29%;
+				left: 35%;
+				position: absolute;
+				border-bottom: 2px solid $color-aqua;
+				bottom: 0;
+			}
+		}
+	}
+}

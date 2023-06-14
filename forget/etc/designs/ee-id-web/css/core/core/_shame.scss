@@ -1,0 +1,161 @@
+// Base Style - Shame
+p.bill-margin {
+	margin-left: 3px;
+	margin-top: 3px;
+}
+
+// Typography - Shame
+.h4-grey {
+	@extend .h4;
+}
+
+.no-word-wrap {
+	word-wrap: normal;
+}
+
+// Themes - Shame
+a.button-secondary-aqua,
+.theme-ivory-background a.button-secondary,
+.theme-ivory-background-light a.button-secondary,
+.theme-white a.button-secondary,
+a.button.white,
+.ee-form button.alt,
+.ee-form input[type='reset'].alt,
+.ee-form input[type='button'].alt,
+.ee-form input[type='submit'].alt {
+	color: $color-aqua !important;
+	background-color: $color-white;
+}
+
+a.button-secondary-aqua,
+a.button.white,
+.ee-form button.alt,
+.ee-form input[type='reset'].alt,
+.ee-form input[type='button'].alt,
+.ee-form input[type='submit'].alt {
+	&:hover {
+		background-color: $color-white-darker;
+	}
+}
+
+// Form styles - Shame
+@-moz-document url-prefix() {
+	.styled-select select {
+		background-image: none !important;
+	}
+}
+
+.ee-form--wrapper-page input {
+	display: block;
+	width: 100%;
+}
+
+.ee-form--wrapper-page .styled-select select {
+	margin-right: 0;
+	padding-right: 3em;
+}
+
+.ee-form--wrapper-page .panel button {
+	margin-top: 1em;
+}
+
+.ee-form--wrapper-page .enter-data {
+	margin-bottom: 2em;
+}
+
+.ee-form-billing-field {
+	border-bottom: 1px dotted $color-grey-medium;
+	padding-bottom: 2em;
+}
+
+.ee-form-billing-message a {
+	display: inline-block;
+	position: relative;
+	padding-right: 30px;
+	margin-top: .5em;
+}
+
+.ee-form-billing-message a:after {
+	content: '\e04e';
+	font-family: ee-icons;
+	font-size: .8em;
+	padding-left: .5em;
+}
+
+.ee-form-field--tooltip .ee-form-message-icon:before {
+	content: '\e037';
+}
+
+.ee-form-field--invalid .ee-form-message-icon:before {
+	content: '\e002';
+}
+
+.ee-form-field--validated .ee-form-message-icon:before {
+	color: $color-valid;
+	content: '\e00a';
+}
+
+@include respond(720) {
+	.ee-form-billing-field {
+		border-bottom: 1px dotted $color-grey-medium;
+		padding-bottom: 6em;
+	}
+
+	.ee-form-field--manage {
+		padding-top: 1em;
+	}
+
+	.ee-form-billing-message {
+		padding: 1em 0 4em;
+	}
+
+	.ee-form-billing-message a {
+		margin-top: .875em;
+	}
+
+	.ee-form--wrapper-page .enter-data,
+	.ee-form--wrapper-page .ee-form-billing-field,
+	.ee-form--wrapper-page .ee-form-field--manage {
+		@include span-columns(6);
+	}
+}
+
+.ee-icon-lbill {
+	font-size: 4em;
+}
+
+#remove-col-pad .col {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.section.intro-banner {
+	display: none;
+}
+
+.eed-slideout {
+	transform: none !important;
+}
+
+.eed-slideout--open {
+	transform: translate3d(85%, 0, 0) !important;
+}
+
+body p {
+	margin: 0;
+}
+
+.breadcrumb-item-container {
+	p {
+		display: inline;
+	}
+}
+
+// fix for cookie setting z-index
+.truste_overlay {
+	z-index: 9890 !important;
+}
+
+.truste_box_overlay {
+	z-index: 9891 !important;
+}

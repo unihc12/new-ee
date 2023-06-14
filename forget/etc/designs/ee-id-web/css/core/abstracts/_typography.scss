@@ -1,0 +1,65 @@
+//
+// Style any element like a heading (level 1-6)
+//
+@mixin heading($level, $margin: true, $medium-size: true) {
+	@if $level>=1 and $level <=6 {
+		@if $margin {
+			margin: nth($headings-margin-small, $level);
+		}
+
+		font-size: nth($headings-font-size-small, $level);
+		@if $medium-size {
+			@include respond(720) {
+				@if $margin {
+					margin: nth($headings-margin-medium, $level);
+				}
+
+				font-size: nth($headings-font-size-medium, $level);
+			}
+		}
+
+		font-family: nth($headings-font-family, $level);
+		line-height: nth($headings-line-height, $level);
+		text-transform: if($level==1 or $level==2, uppercase, none);
+	}
+}
+
+//
+// Text CTA with a chevron
+//
+@mixin text-cta($bold: true) {
+	@if $bold {
+		font-weight: 700;
+	}
+
+	line-height: 1;
+
+	&:after {
+		margin-left: .5em;
+		content: '>';
+		font-family: $font-rubrik;
+		vertical-align: middle;
+	}
+}
+
+//
+// Add a icon before or after a link (making both the link and icon clickable)
+//
+@mixin icon-link($icon, $position: after, $vertical-adjustment: 0) {
+	$alignment-side: if($position==after, right, left);
+	$opposite-alignment-side: if($position==after, left, right);
+
+	position: relative;
+	margin-#{$alignment-side}: 1.5em;
+
+	&:#{$position} {
+		position: absolute;
+		top: 50%;
+		#{$alignment-side}: -1.25em;
+		margin-top: -.5em + $vertical-adjustment;
+		padding-#{$opposite-alignment-side}: .5em;
+		padding-bottom: .25em;
+		font-size: 1em;
+		@include ee-icon-font($icon);
+	}
+}

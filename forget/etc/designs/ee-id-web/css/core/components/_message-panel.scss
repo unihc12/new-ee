@@ -1,0 +1,189 @@
+.message-panel {
+	position: relative;
+	margin: 8px 0 16px;
+	padding: 15px;
+	line-height: 22px;
+	background-color: $notification-warning-background;
+	border: 1px solid $notification-warning-border;
+
+	p {
+		margin: 0;
+	}
+
+	p + p {
+		margin-top: 15px;
+	}
+
+	&--rounded {
+		border-radius: 3px;
+	}
+
+	&__headline {
+		margin-bottom: 25px;
+		@include respond(0, 800) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__title {
+		h2 {
+			font-size: 1.25em;
+			text-transform: none;
+			margin: .8em 0;
+			font-family: $font-rubrik;
+		}
+	}
+
+	&--no-left-padding {
+		padding-left: 0;
+	}
+
+	&--extra-padding {
+		padding: 20px 25px 25px;
+	}
+
+	&__ticked-container,
+	ul {
+		list-style: none;
+		padding-left: 0;
+		margin: 8px 0 0;
+
+		li,
+		&__item {
+			padding-left: 27px;
+			margin-bottom: 8px;
+			position: relative;
+			@extend .ee-icon-tick;
+
+			&:before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				color: $color-aqua;
+				font-size: 20px;
+				font-family: ee-icons;
+				font-style: normal;
+				font-weight: 400;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				speak: none;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		}
+	}
+
+	&--field-tooltip {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: calc(100% + 25px);
+		width: 100%;
+		margin: 0;
+		z-index: 10;
+		@include respond(0, 560) {
+			position: relative;
+			left: 0;
+			margin-top: 15px;
+			padding: 15px 10px;
+		}
+
+		&:hover {
+			display: block !important; //force show tooltip on blur to manage interaction with its content
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: -12px;
+			top: 15px;
+			border-bottom: 12px solid transparent;
+			border-top: 12px solid transparent;
+			border-right: 12px solid $notification-warning-border;
+			@include respond(0, 560) {
+				top: -12px;
+				left: calc(50% - 12px);
+				border-bottom: 12px solid $notification-warning-border;
+				border-left: 12px solid transparent;
+				border-right: 12px solid transparent;
+				border-top: none;
+			}
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: -11px;
+			top: 16px;
+			border-bottom: 11px solid transparent;
+			border-top: 11px solid transparent;
+			border-right: 11px solid $notification-warning-background;
+			@include respond(0, 560) {
+				top: -11px;
+				left: calc(50% - 11px);
+				border-bottom: 11px solid $notification-warning-background;
+				border-left: 11px solid transparent;
+				border-right: 11px solid transparent;
+				border-top: none;
+			}
+		}
+
+		&--break-at-720 {
+			@include respond(0, 720) {
+				position: relative;
+				left: 0;
+				margin-top: 15px;
+				padding: 15px 10px;
+			}
+
+			&:before {
+				@include respond(0, 720) {
+					top: -12px;
+					left: calc(50% - 12px);
+					border-bottom: 12px solid $notification-warning-border;
+					border-left: 12px solid transparent;
+					border-right: 12px solid transparent;
+					border-top: none;
+				}
+			}
+
+			&:after {
+				@include respond(0, 720) {
+					top: -11px;
+					left: calc(50% - 11px);
+					border-bottom: 11px solid $notification-warning-background;
+					border-left: 11px solid transparent;
+					border-right: 11px solid transparent;
+					border-top: none;
+				}
+			}
+		}
+	}
+
+	&--dark-bg {
+		background-color: $color-message-dark-bakground;
+		border-color: $color-message-dark-border;
+	}
+
+	&--no-bg {
+		background-color: transparent;
+		border-color: transparent;
+		@include respond(0, 800) {
+			padding: 15px 0;
+		}
+
+		.message-panel__ticked-container {
+			&__item {
+				&:before {
+					color: $color-black;
+					@include respond(0, 560) {
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+}

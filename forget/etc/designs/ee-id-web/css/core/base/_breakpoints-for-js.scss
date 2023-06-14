@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Breakpoints for use in JS
+   ========================================================================== */
+
+html:after {
+	@include visually-hidden;
+}
+
+@each $breakpoint in $valid-breakpoints {
+	$em-value: convert-to-em($breakpoint);
+	@media (min-width: $em-value) {
+		html:after {
+			content: '#{$breakpoint}';
+		}
+	}
+}

@@ -1,0 +1,34 @@
+@mixin media-object($object-class: media-object, $body-class: media-body, $min-breakpoint: 0, $max-breakpoint: 9999, $guttering: false) {
+	$medium-breakpoint: 720;
+	$large-breakpoint: 1200;
+
+	.#{$object-class} {
+		float: left;
+		@if $guttering {
+			margin-right: $grid-gutter-small;
+			@if $min-breakpoint <=$medium-breakpoint and $max-breakpoint>=$medium-breakpoint {
+				@include respond($medium-breakpoint) {
+					margin-right: $grid-gutter-medium;
+				}
+			}
+			@if $min-breakpoint <=$large-breakpoint and $max-breakpoint>=$large-breakpoint {
+				@include respond($large-breakpoint) {
+					margin-right: $grid-gutter-large;
+				}
+			}
+		}
+
+		img {
+			display: block;
+		}
+	}
+
+	.#{$body-class} {
+		@include overflow-hidden;
+		@include clearfix;
+	}
+}
+
+@mixin media-object-with-guttering($object-class: media-object, $body-class: media-body, $min-breakpoint: 0, $max-breakpoint: 9999) {
+	@include media-object($object-class, $body-class, $min-breakpoint, $max-breakpoint, true);
+}

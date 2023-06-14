@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+@font-face {
+	font-family: Nobblee;
+	src: url('../../fonts/core/nobblee_light.eot?#iefix') format('eot'), url('../../fonts/core/nobblee_light.woff') format('woff'), url('../../fonts/core/nobblee_light.ttf') format('truetype');
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: Nobblee;
+	src: url('../../fonts/core/nobblee_regular.eot?#iefix') format('eot'), url('../../fonts/core/nobblee_regular.woff') format('woff'), url('../../fonts/core/nobblee_regular.ttf') format('truetype');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: Nobblee;
+	src: url('../../fonts/core/nobblee_bold.eot?#iefix') format('eot'), url('../../fonts/core/nobblee_bold.woff') format('woff'), url('../../fonts/core/nobblee_bold.ttf') format('truetype');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: Rubrik;
+	src: url('../../fonts/core/rubrik_light.eot?#iefix') format('eot'), url('../../fonts/core/rubrik_light.woff') format('woff'), url('../../fonts/core/rubrik_light.ttf') format('truetype');
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: Rubrik;
+	src: url('../../fonts/core/rubrik_regular.eot?#iefix') format('eot'), url('../../fonts/core/rubrik_regular.woff') format('woff'), url('../../fonts/core/rubrik_regular.ttf') format('truetype');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: Rubrik;
+	src: url('../../fonts/core/rubrik_semibold.eot?#iefix') format('eot'), url('../../fonts/core/rubrik_semibold.woff') format('woff'), url('../../fonts/core/rubrik_semibold.ttf') format('truetype');
+	font-weight: 700;
+}

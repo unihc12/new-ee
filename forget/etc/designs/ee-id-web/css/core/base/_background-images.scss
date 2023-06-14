@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Background images
+   ========================================================================== */
+
+%sprite-background-image {
+	background-image: url('../../images/core/scss-src/EE-main-sprite.svg');
+
+	.no-svg & {
+		background-image: url('../../images/core/scss-src/EE-main-sprite.png');
+	}
+}
+
+// Note: Classes for the form element control images are not included here as
+// they would be useless.
+.ee-bgimg-orange-logo {
+	@extend %sprite-background-image;
+	@include ee-sprite-custom-size(1, $ee-bgimg-orange-logo-default-width);
+}
+
+.ee-bgimg-tmobile-logo {
+	@extend %sprite-background-image;
+	@include ee-sprite-custom-size(2, $ee-bgimg-tmobile-logo-default-width);
+}
+
+%shop-sprite-background-image {
+	// As we don't have vector versions of most of the icons in the sprite, we're
+	// only using the PNG version
+	//background-image: url('../../images/core/scss-src/EE-shop-sprite.svg');
+	background-image: url('../../images/core/scss-src/EE-shop-sprite.png'); //.no-svg & { background-image: url('../../images/core/scss-src/EE-shop-sprite.png'); }
+}
+
+.ee-bgimg-star-one,
+.ee-bgimg-star-half,
+.ee-bgimg-star-zero,
+.ee-bgimg-star-selected {
+	@extend %shop-sprite-background-image;
+
+	display: inline-block;
+	width: 17px;
+	height: 16px;
+}
+
+.ee-bgimg-star-one {
+	@include ee-sprite-position(10);
+}
+
+.ee-bgimg-star-half {
+	@include ee-sprite-position(11);
+}
+
+.ee-bgimg-star-zero {
+	@include ee-sprite-position(12);
+}
+
+.ee-bgimg-star-selected {
+	@include ee-sprite-position(13);
+}
+
+@media print {
+	[class*='ee-bgimg']:after {
+		content: '';
+	}
+}

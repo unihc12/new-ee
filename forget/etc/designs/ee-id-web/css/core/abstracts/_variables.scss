@@ -1,0 +1,142 @@
+// Set legacy browser support
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: false;
+$legacy-support-for-mozilla: false;
+
+// Font settings
+$bulletproof-font-face: true;
+
+// Font stacks
+$font-arial: Arial, sans-serif;
+$font-nobblee: Nobblee, Arial, sans-serif;
+$font-rubrik: Rubrik, Arial, sans-serif;
+
+// Base settings
+$base-font-family: $font-rubrik;
+$base-font-size: 16px;
+$base-border-radius: .25em;
+
+// Typography
+$base-font-size-xsmall: convert-to-em(13.2px);
+$base-font-size-small: convert-to-em(14px);
+$base-font-size-medium: convert-to-em(16px);
+
+// Headings
+$headings-font-size-small: convert-to-em(31px, 14px),
+	convert-to-em(27px, 14px),
+	convert-to-em(18px, 14px),
+	convert-to-em(18px, 14px),
+	convert-to-em(16px, 14px),
+	convert-to-em(14px, 14px);
+
+$headings-margin-small: convert-to-em(16px, 31px) 0,
+	convert-to-em(16px, 27px) 0,
+	convert-to-em(16px, 18px) 0,
+	convert-to-em(16px, 18px) 0,
+	convert-to-em(16px, 16px) 0,
+	convert-to-em(16px, 14px) 0;
+
+$headings-font-size-medium: convert-to-em(43px),
+	convert-to-em(34px),
+	convert-to-em(20px),
+	convert-to-em(20px),
+	convert-to-em(18px),
+	convert-to-em(16px);
+
+$headings-margin-medium: convert-to-em(16px, 43px) 0,
+	convert-to-em(16px, 34px) 0,
+	convert-to-em(16px, 20px) 0,
+	convert-to-em(16px, 20px) 0,
+	convert-to-em(16px, 18px) 0,
+	convert-to-em(16px, 16px) 0;
+
+$headings-font-family: $font-nobblee, $font-nobblee, $font-rubrik, $font-rubrik, $font-arial, $font-arial;
+$headings-line-height: 1, 1, 1.25, 1.25, 1.25, 1.25;
+
+// Background images
+$ee-bgimg-orange-logo-default-width: 26px;
+$ee-bgimg-orange-logo-default-height: $ee-bgimg-orange-logo-default-width;
+$ee-bgimg-tmobile-logo-default-width: 26px;
+$ee-bgimg-tmobile-logo-default-height: $ee-bgimg-tmobile-logo-default-width;
+
+// New Style Guide Variables
+$enable-rounded: true !default;
+$enable-transitions: true !default;
+
+// Font sizes map for Rubrik
+$font-sizes:  (
+	xxs: 12,
+	xs: 14,
+	s: 16,
+	m: 17,
+	l: 18,
+	xl: 19,
+	g1: 20,
+	g2: 22,
+	g3: 24,
+	g4: 26,
+	g5: 28,
+	g6: 30,
+	g7: 32,
+	g8: 36
+) !default;
+
+// Line heights map for Rubrik
+// Due to rounding anomalies getting line heights from map, rather than calculating
+$line-heights-unitless:  (
+	xxs: 2,
+	xs: 1.71429,
+	s: 1.75,
+	m: 1.64706,
+	l: 1.55556,
+	xl: 1.4737,
+	g1: 1.6,
+	g2: 1.2728,
+	g3: 1.16667,
+	g4: 1.077,
+	g5: 1.14286,
+	g6: 1.066668,
+	g7: 1.125,
+	g8: 1.11112
+) !default;
+
+// Offsets map for Rubrik (to maintain 4 pixel baseline)
+$offsets:  (
+	xxs: 0,
+	xs: -1,
+	s: 0,
+	m: 0,
+	l: 0,
+	xl: 0,
+	g1: 1,
+	g2: -2,
+	g3: -2,
+	g4: 1,
+	g5: -2,
+	g6: 2,
+	g7: -1,
+	g8: 0
+) !default;
+
+// Transitions duration.
+// Ideally, it should be the same as transitions in constants.js file
+$transitions: (
+	'base': .25s,
+	'fade': .25s,
+	'color': .25s,
+	'collapse': .6s,
+	'width': 1s,
+	'scale': 1s
+) !default;
+
+$font-base: 16;
+$ease-out-quint:    cubic-bezier(.23, 1, .32, 1);
+$ease-in-quad:      cubic-bezier(.55, .085, .68, .53);
+
+$transition-base:      all map-get($transitions, 'base') $ease-in-quad !default;
+$transition-color:     background-color map-get($transitions, 'color') linear, color map-get($transitions, 'color') linear !default;
+$transition-fade:      opacity map-get($transitions, 'fade') ease !default;
+$transition-collapse:  height map-get($transitions, 'collapse') ease !default;
+$transition-width:     width map-get($transitions, 'width') ease !default;
+$transition-transform: transform map-get($transitions, 'scale') $ease-out-quint !default;

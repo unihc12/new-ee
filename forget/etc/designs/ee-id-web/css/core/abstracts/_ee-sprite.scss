@@ -1,0 +1,31 @@
+$sprite-image-default-width: 128px;
+$sprite-image-default-height: 128px;
+
+@mixin ee-sprite-custom-size( $row, $default-width, $width: $default-width, $default-height: $default-width, $height: $width, $x: 0) {
+	@if $width !=$default-width {
+		$scaling-val: ceil($width/$default-width * $sprite-image-default-width);
+
+		.backgroundsize & {
+			width: $width;
+			@if $height {
+				height: $height;
+			}
+			@include ee-sprite-position($row, $x, $scaling-val);
+
+			background-size: $scaling-val auto;
+		}
+	}
+	@else {
+		width: $width;
+		@if $height {
+			height: $height;
+		}
+		@include ee-sprite-position($row, $x);
+	}
+}
+
+@mixin ee-sprite-position($row, $x: 0, $height: $sprite-image-default-height) {
+	$y: ($row - 1) * -$height;
+
+	background-position: $x $y;
+}

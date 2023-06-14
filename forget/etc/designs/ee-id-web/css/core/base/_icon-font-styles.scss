@@ -1,0 +1,583 @@
+/* ==========================================================================
+   Icon font styles
+   ========================================================================== */
+
+@font-face {
+	font-family: ee-icons;
+	src: url('../../fonts/core/ee-icons.eot?#iefix') format('eot'), url('../../fonts/core/ee-icons.woff') format('woff'), url('../../fonts/core/ee-icons.ttf') format('truetype');  /* eot used not embedded-opentype so that IE9 uses WOFF not EOT */
+	font-weight: 400;
+	font-style: normal;
+}
+
+/**
+ * [data-icon] in use to support editorial icon characters.
+ */
+
+[data-icon],
+[class*='ee-icon'] {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+	text-decoration: none;
+
+	&:before {
+		@include ee-icon-font;
+	}
+}
+
+a[data-icon],
+a[class*='ee-icon'] {
+	&:hover,
+	&:focus {
+		border-bottom: none !important;
+	}
+	@media print {
+		&:after {
+			content: '';
+		}
+	}
+}
+
+[data-icon]:before {
+	content: attr(data-icon);
+}
+
+.ee-icon-medium {
+	font-size: 1.5em;
+}
+
+.ee-icon-large {
+	font-size: 2.5em;
+}
+
+//
+// The icons commented out below are not yet required as HTML classes and so
+// shouldn't be output in the CSS until required.
+//
+.ee-icon-1gb:before {
+	content: $ee-icon-1gb;
+}
+
+.ee-icon-3g:before {
+	content: $ee-icon-3g;
+}
+
+.ee-icon-3gb:before {
+	content: $ee-icon-3gb;
+}
+
+.ee-icon-4g:before {
+	content: $ee-icon-4g;
+}
+
+.ee-icon-4gee:before {
+	content: $ee-icon-4gee;
+}
+
+.ee-icon-4geeresumptive:before {
+	content: $ee-icon-4geeresumptive;
+}
+
+.ee-icon-4geestreaming:before {
+	content: $ee-icon-4geestreaming;
+}
+
+.ee-icon-500mb:before {
+	content: $ee-icon-500mb;
+}
+
+.ee-icon-5gb:before {
+	content: $ee-icon-5gb;
+}
+
+.ee-icon-8gb:before {
+	content: $ee-icon-8gb;
+}
+
+.ee-icon-accountsbilling:before {
+	content: $ee-icon-accountsbilling;
+}
+
+.ee-icon-addons:before {
+	content: $ee-icon-addons;
+}
+
+.ee-icon-apps:before {
+	content: $ee-icon-apps;
+}
+
+.ee-icon-articles:before {
+	content: $ee-icon-articles;
+}
+
+.ee-icon-audio:before {
+	content: $ee-icon-audio;
+}
+
+.ee-icon-backfast:before {
+	content: $ee-icon-backfast;
+}
+
+.ee-icon-basket:before {
+	content: $ee-icon-basket;
+}
+
+.ee-icon-battery:before {
+	content: $ee-icon-battery;
+}
+
+.ee-icon-bluetooth:before {
+	content: $ee-icon-bluetooth;
+}
+
+.ee-icon-bottom:before {
+	content: $ee-icon-bottom;
+}
+
+.ee-icon-broadband:before {
+	content: $ee-icon-broadband;
+}
+
+.ee-icon-business:before {
+	content: $ee-icon-business;
+}
+
+.ee-icon-calendar:before {
+	content: $ee-icon-calendar;
+}
+
+.ee-icon-calendar12:before {
+	content: $ee-icon-calendar12;
+}
+
+.ee-icon-calendar18:before {
+	content: $ee-icon-calendar18;
+}
+
+.ee-icon-calendar24:before {
+	content: $ee-icon-calendar24;
+}
+
+.ee-icon-camera:before {
+	content: $ee-icon-camera;
+}
+
+.ee-icon-chat:before {
+	content: $ee-icon-chat;
+}
+
+.ee-icon-chevronback:before {
+	content: $ee-icon-chevronback;
+}
+
+.ee-icon-chevrondown:before {
+	content: $ee-icon-chevrondown;
+}
+
+.ee-icon-chevronnext:before {
+	content: $ee-icon-chevronnext;
+}
+
+.ee-icon-chevronup:before {
+	content: $ee-icon-chevronup;
+}
+
+.ee-icon-cinema:before {
+	content: $ee-icon-cinema;
+}
+
+.ee-icon-clockcircle:before {
+	content: $ee-icon-clockcircle;
+}
+
+.ee-icon-clonephone:before {
+	content: $ee-icon-clonephone;
+}
+
+.ee-icon-close:before {
+	content: $ee-icon-close;
+}
+
+.ee-icon-community:before {
+	content: $ee-icon-community;
+}
+
+.ee-icon-connectivity:before {
+	content: $ee-icon-connectivity;
+}
+
+.ee-icon-contact:before {
+	content: $ee-icon-contact;
+}
+
+.ee-icon-contactless:before {
+	content: $ee-icon-contactless;
+}
+
+.ee-icon-contactus:before {
+	content: $ee-icon-contactus;
+}
+
+.ee-icon-coverage:before {
+	content: $ee-icon-coverage;
+}
+
+.ee-icon-cross:before {
+	content: $ee-icon-cross;
+}
+
+.ee-icon-data:before {
+	content: $ee-icon-data;
+}
+
+.ee-icon-datapass:before {
+	content: $ee-icon-datapass;
+}
+
+.ee-icon-devicehelp:before {
+	content: $ee-icon-devicehelp;
+}
+
+.ee-icon-document:before {
+	content: $ee-icon-document;
+}
+
+.ee-icon-download:before {
+	content: $ee-icon-download;
+}
+
+.ee-icon-educate:before {
+	content: $ee-icon-educate;
+}
+
+.ee-icon-email:before {
+	content: $ee-icon-email;
+}
+
+.ee-icon-exclamationcircle:before {
+	content: $ee-icon-exclamationcircle;
+}
+
+.ee-icon-explore:before {
+	content: $ee-icon-explore;
+}
+
+.ee-icon-facebook:before {
+	content: $ee-icon-facebook;
+}
+
+.ee-icon-features:before {
+	content: $ee-icon-features;
+}
+
+.ee-icon-filmee:before {
+	content: $ee-icon-filmee;
+}
+
+.ee-icon-filmstore:before {
+	content: $ee-icon-filmstore;
+}
+
+.ee-icon-findstore:before {
+	content: $ee-icon-findstore;
+}
+
+.ee-icon-flightmode:before {
+	content: $ee-icon-flightmode;
+}
+
+.ee-icon-forwardfast:before {
+	content: $ee-icon-forwardfast;
+}
+
+.ee-icon-gaming:before {
+	content: $ee-icon-gaming;
+}
+
+.ee-icon-gb:before {
+	content: $ee-icon-gb;
+}
+
+.ee-icon-gbpound:before {
+	content: $ee-icon-gbpound;
+}
+
+.ee-icon-gift:before {
+	content: $ee-icon-gift;
+}
+
+.ee-icon-grid:before {
+	content: $ee-icon-grid;
+}
+
+.ee-icon-home:before {
+	content: $ee-icon-home;
+}
+
+.ee-icon-informationcircle:before {
+	content: $ee-icon-informationcircle;
+}
+
+.ee-icon-innovation:before {
+	content: $ee-icon-innovation;
+}
+
+.ee-icon-international:before {
+	content: $ee-icon-international;
+}
+
+.ee-icon-internettethering:before {
+	content: $ee-icon-internettethering;
+}
+
+.ee-icon-like:before {
+	content: $ee-icon-like;
+}
+
+.ee-icon-linkedin:before {
+	content: $ee-icon-linkedin;
+}
+
+.ee-icon-list:before {
+	content: $ee-icon-list;
+}
+
+.ee-icon-login:before {
+	content: $ee-icon-login;
+}
+
+.ee-icon-loststolen:before {
+	content: $ee-icon-loststolen;
+}
+
+.ee-icon-mb:before {
+	content: $ee-icon-mb;
+}
+
+.ee-icon-membership:before {
+	content: $ee-icon-membership;
+}
+
+.ee-icon-mins:before {
+	content: $ee-icon-mins;
+}
+
+.ee-icon-minus:before {
+	content: $ee-icon-minus;
+}
+
+.ee-icon-music:before {
+	content: $ee-icon-music;
+}
+
+.ee-icon-musicstore:before {
+	content: $ee-icon-musicstore;
+}
+
+.ee-icon-new:before {
+	content: $ee-icon-new;
+}
+
+.ee-icon-numbers:before {
+	content: $ee-icon-numbers;
+}
+
+.ee-icon-outbox:before {
+	content: $ee-icon-outbox;
+}
+
+.ee-icon-padlock:before {
+	content: $ee-icon-padlock;
+}
+
+.ee-icon-pause:before {
+	content: $ee-icon-pause;
+}
+
+.ee-icon-paybycreditcard:before {
+	content: $ee-icon-paybycreditcard;
+}
+
+.ee-icon-paybydirectdebit:before {
+	content: $ee-icon-paybydirectdebit;
+}
+
+.ee-icon-personalise:before {
+	content: $ee-icon-personalise;
+}
+
+.ee-icon-phone:before {
+	content: $ee-icon-phone;
+}
+
+.ee-icon-phoneandtablets:before {
+	content: $ee-icon-phoneandtablets;
+}
+
+.ee-icon-photo:before {
+	content: $ee-icon-photo;
+}
+
+.ee-icon-pinlocation:before {
+	content: $ee-icon-pinlocation;
+}
+
+.ee-icon-play:before {
+	content: $ee-icon-play;
+}
+
+.ee-icon-playcircle:before {
+	content: $ee-icon-playcircle;
+}
+
+.ee-icon-playcirclesolid:before {
+	content: $ee-icon-playcirclesolid;
+}
+
+.ee-icon-plus:before {
+	content: $ee-icon-plus;
+}
+
+.ee-icon-pound:before {
+	content: $ee-icon-pound;
+}
+
+.ee-icon-power:before {
+	content: $ee-icon-power;
+}
+
+.ee-icon-priceplans:before {
+	content: $ee-icon-priceplans;
+}
+
+.ee-icon-print:before {
+	content: $ee-icon-print;
+}
+
+.ee-icon-processing:before {
+	content: $ee-icon-processing;
+}
+
+.ee-icon-quote:before {
+	content: $ee-icon-quote;
+}
+
+.ee-icon-readmorebook:before {
+	content: $ee-icon-readmorebook;
+}
+
+.ee-icon-reviewpen:before {
+	content: $ee-icon-reviewpen;
+}
+
+.ee-icon-roaming:before {
+	content: $ee-icon-roaming;
+}
+
+.ee-icon-safetysecurity:before {
+	content: $ee-icon-safetysecurity;
+}
+
+.ee-icon-search:before {
+	content: $ee-icon-search;
+}
+
+.ee-icon-service:before {
+	content: $ee-icon-service;
+}
+
+.ee-icon-sharer:before {
+	content: $ee-icon-sharer;
+}
+
+.ee-icon-simcard:before {
+	content: $ee-icon-simcard;
+}
+
+.ee-icon-size:before {
+	content: $ee-icon-size;
+}
+
+.ee-icon-social:before {
+	content: $ee-icon-social;
+}
+
+.ee-icon-speed:before {
+	content: $ee-icon-speed;
+}
+
+.ee-icon-stop:before {
+	content: $ee-icon-stop;
+}
+
+.ee-icon-support:before {
+	content: $ee-icon-support;
+}
+
+.ee-icon-surfmore:before {
+	content: $ee-icon-surfmore;
+}
+
+.ee-icon-talkmore:before {
+	content: $ee-icon-talkmore;
+}
+
+.ee-icon-tc:before {
+	content: $ee-icon-tc;
+}
+
+.ee-icon-texts:before {
+	content: $ee-icon-texts;
+}
+
+.ee-icon-tick:before {
+	content: $ee-icon-tick;
+}
+
+.ee-icon-tickcircle:before {
+	content: $ee-icon-tickcircle;
+}
+
+.ee-icon-tickinbox:before {
+	content: $ee-icon-tickinbox;
+}
+
+.ee-icon-top:before {
+	content: $ee-icon-top;
+}
+
+.ee-icon-trash:before {
+	content: $ee-icon-trash;
+}
+
+.ee-icon-tv:before {
+	content: $ee-icon-tv;
+}
+
+.ee-icon-twitter:before {
+	content: $ee-icon-twitter;
+}
+
+.ee-icon-voip:before {
+	content: $ee-icon-voip;
+}
+
+.ee-icon-wallet:before {
+	content: $ee-icon-wallet;
+}
+
+.ee-icon-warning:before {
+	content: $ee-icon-warning;
+}
+
+.ee-icon-welcome:before {
+	content: $ee-icon-welcome;
+}
+
+.ee-icon-wificalling:before {
+	content: $ee-icon-wificalling;
+}
+
+.ee-icon-youtube:before {
+	content: $ee-icon-youtube;
+}

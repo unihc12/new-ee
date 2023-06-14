@@ -1,0 +1,2529 @@
+/* stylelint-disable no-descending-specificity */
+
+#main:focus {
+	outline: none;
+}
+
+.myee h2,
+.myee .h2,
+.myee h3,
+.myee .h3,
+.myee h4,
+.myee .h1-message,
+.myee .h4,
+.myee h5,
+.myee .h5,
+.myee h6,
+.myee .h6 {
+	font-family: $base-font-family;
+}
+
+.myee .container__table,
+.myee .h2,
+.myee h3,
+.myee .h3,
+.myee .h1-message {
+	font-weight: 100;
+}
+
+.myee .h1-message {
+	font-size: 2.375em;
+	line-height: 1.3em;
+	margin: 0;
+	letter-spacing: -.03em;
+}
+
+.text--dark {
+	color: $color-dark-text !important;
+}
+
+.text-margin {
+	margin-top: 4px;
+	margin-bottom: 0;
+}
+
+.myee h2,
+.myee .h2 {
+	text-transform: none;
+	margin: 0;
+}
+
+.myee h3,
+.myee .h3 {
+	font-size: 1.5625em;
+}
+
+.myee h4,
+.myee .h4 {
+	font-size: 1.25em;
+}
+
+.myee h5,
+.myee .h5 {
+	font-size: 1.125em;
+}
+
+.myee h6,
+.myee .h6 {
+	font-size: 1em;
+}
+
+.myee .panels {
+	/*
+	margin: 0;
+*/
+}
+
+//.myee .container {
+//	margin:0 auto;
+//}
+
+.myee .tabs .tabs__tab-list li {
+	min-width: 135px;
+	text-transform: none;
+}
+
+.myee .tabs .tabs__tab-list li:last-child {
+	border: none;
+}
+
+.help-addons .h4 {
+	color: $color-aqua;
+}
+
+.help-addons .expandable__panel-container {
+	padding: 0;
+	margin: 0 3em;
+	border-top: 1px dotted $color-grey;
+}
+
+.compact-containers .container,
+.myee .compact-containers .container {
+	padding-top: 0;
+	padding-bottom: 1px;
+}
+
+.compact-col.col {
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.js .help-addons .expandable__panel-header {
+	color: $color-aqua;
+	font-weight: 400;
+
+	/* .help-addons .js .expandable__panel, */
+	border-top: none;
+	border-bottom: 1px dotted $color-grey;
+}
+
+.js .help-addons .expandable__panel-header.expandable__panel--open {
+	border-bottom: none;
+
+	/* 0; */
+}
+
+/* .js .help-addons .expandable__panel-header:first-child,
+.help-addons .js .expandable__panel:first-child {
+	border-top: 1px dotted $color-grey;
+} */
+
+section.white,
+div.white,
+li.white {
+	/*
+	box-shadow: 0 4px 4px -4px #BBBBBB;
+*/
+}
+
+.white.no-padding-top {
+	box-shadow: none;
+}
+
+.clear {
+	clear: both;
+}
+
+/* Clearing fix. Sorry, purists. */
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: ' ';
+	clear: both;
+	height: 0;
+}
+
+* html .clearfix {
+	zoom: 1;
+}
+
+/* IE6 */
+
+*:first-child + html .clearfix {
+	zoom: 1;
+}
+
+/* IE7 */
+
+/* /clearfix */
+
+/* Allow us to prevent words being broken, e.g. "T-Mobile" wrap if possible */
+
+.nowrap,
+.brand-name {
+	white-space: nowrap;
+}
+
+.myee .tabs .tabs__tab-container {
+	margin: 0;
+}
+
+.myee input.pull-right,
+.myee button.pull-right {
+	margin-right: 0;
+}
+
+.ee--icons {
+	font-size: 5.5em;
+}
+
+.ee-icon-tickcircle,
+.ee-icon-exclamationcircle,
+.ee-icon-clockcircle {
+	font-size: 3em;
+}
+
+.myee .text--right {
+	text-align: right;
+}
+
+/* Allow us to set something as hidden from the get-go. */
+
+.hidden {
+	display: none;
+}
+
+/* For when .hidden just isn't enough - IMPORTANT ALL THE THINGS!
+ * http://oli.jp/img/2011/important-inheritance.png */
+
+.hidden-important {
+	display: none !important;
+}
+
+/*
+ * Media query variations
+ */
+
+@media (max-width: 20em) {
+	.expandable__module-header {
+		padding: 1em;
+	}
+
+	.help-addons .expandable__panel-container {
+		margin: 0 .5em;
+	}
+}
+
+@media (min-width: 48em) {
+	.expandable__module-header {
+		padding: 1em;
+	}
+
+	.help-addons .expandable__panel-container {
+		margin: 0 3em;
+	}
+
+	.tabs .tabs__tab-container .tabs__tab {
+		padding: 0;
+	}
+}
+
+@media (min-width: 64em) {
+	.expandable__module-header {
+		padding: 1em;
+	}
+
+	.help-addons .expandable__panel-container {
+		margin: 0 3em;
+	}
+}
+
+@media (max-width: 769px) {
+	.myee .h2 {
+		font-size: 1.4em;
+	}
+
+	.myee h3,
+	.myee .h3 {
+		font-size: 1.367em;
+	}
+
+	.myee h4,
+	.myee .h4 {
+		font-size: 1.09em;
+	}
+
+	.myee h5,
+	.myee .h5 {
+		font-size: 1.125em;
+	}
+
+	.myee h6,
+	.myee .h6 {
+		font-size: 1em;
+	}
+
+	.ee--icons {
+		font-size: 3.5em;
+	}
+
+	.myee .tabs .tabs__tab-list li {
+		width: auto;
+	}
+
+	.myee .tabs .tabs__tab-container {
+		padding: 5px;
+	}
+
+	.tabs .tabs__tab-container .tabs__tab {
+		padding: 0 1em;
+	}
+}
+
+@media (max-width: 719px) {
+	.myee .text--right {
+		text-align: left;
+	}
+
+	.myee .tabs .tabs__tab-container {
+		border: 1px solid #aaa;
+	}
+}
+
+@media (max-width: 560px) {
+	.myee .tabs .tabs__tab-container {
+		margin: 0;
+		padding: 1em;
+	}
+}
+
+/* Shrink the overall text size of the bills and payments 3-col header */
+
+.three-column-billing-header {
+	font-size: .95em;
+}
+
+/* When the account has direct debit, the third column contains the text:
+        "We will take payment		<-- Large
+
+   		via Direct Debit on or		<-- Medium
+   		around 18 Jun 2016"
+
+   	Also move the DD text up a smidge.
+*/
+
+.three-column-billing-header.account-with-direct-debit .payment-date-info p.h2.plans-addons-head-empty {
+	font-size: 1.4em;
+	margin-top: .25em;
+}
+
+/* Without DD, it says:
+        "Payment required by		<-- Large
+
+        12 Jan 2015					<-- Huge
+
+        We recommend direct debit"	<-- Small
+  */
+
+.three-column-billing-header.account-without-direct-debit .payment-date-info p.h2.plans-addons-head-empty {}
+
+/* Don't pad the title text on the left.
+   Don't float the plans-addons div. */
+
+.three-column-billing-header div.plans-addons {
+	padding-left: 0;
+	float: none;
+	width: 100%;
+}
+
+/* Adjust the header text size and margins */
+
+.three-column-billing-header div.plans-addons p.h2.plans-addons-head-empty {
+	font-size: 2.5em;
+	margin-top: .4em;
+	font-weight: 400;
+	margin-bottom: .25em;
+}
+
+.three-column-billing-header div.plans-addons .plans-addons-head-empty {
+	font-size: 1rem !important;
+	line-height: 1.8em !important;
+	font-weight: 400;
+	margin-bottom: .25em;
+}
+
+.three-column-billing-header div.plans-addons .plans-addons-head-empty .detail-value {
+	font-size: 2.5em;
+	font-weight: 500;
+}
+
+.three-column-billing-header div.plans-addons .plans-addons-head-empty .detail-value-first-bill {
+	font-size: 1em;
+	font-weight: 500;
+}
+
+/* Reduce the margin below the H2 column header a bit */
+
+.three-column-billing-header .col .panel h2 {
+	margin-bottom: .25em;
+}
+
+/* Use the correct font and increase its size for the next bill date. */
+
+.three-column-billing-header div.plans-addons span.details {
+	font-size: 1.3em;
+	font-family: $base-font-family;
+}
+
+/* Move the DD icon up and make it aqua */
+
+.three-column-billing-header .payment-date-info .plan-icons.ee--icons.bill-icons.ee-icon-paybydirectdebit {
+	margin-top: -.25em;
+	margin-left: 0;
+	color: $color-aqua;
+	width: 1.1em;
+}
+
+/* The DD icon is a bit too high next to the date when there is no DD */
+
+.three-column-billing-header.account-without-direct-debit .payment-date-info .plan-icons.ee--icons.bill-icons.ee-icon-paybydirectdebit {
+	margin-top: -.125em;
+}
+
+/* Make plan icons a little smaller in the Bills and Payments header, and a little narrower. */
+
+.three-column-billing-header .plan-icons {
+	font-size: 4.5em;
+	width: 1.125em;
+
+	/* Padding needed to keep text pushed to the right and aligned */
+	padding-bottom: .625em;
+
+	/* About 10 pixels */
+	color: $color-aqua;
+}
+
+/* Change the colour of the text around "Direct Debit" in the text "via Direct Debit on or around..." to grey */
+
+.three-column-billing-header.account-with-direct-debit .payment-date-info a {
+	color: $color-grey;
+}
+
+/* Change the colour of "Direct Debit" in the text "via Direct Debit on or around..." to aqua */
+
+.three-column-billing-header .payment-date-info a span.direct-debit-highlighted {
+	color: $color-aqua;
+}
+
+/* Anonymous plan page */
+
+.ee-form-control-wrapper.hint-label {
+	margin-top: 10px;
+}
+
+#general-info .static-data-border > div > div.row-hr:nth-child(even) {
+	border-left: 1px dotted #808080;
+	text-align: right;
+}
+
+/* **************************** */
+
+/* Styles for the payments form */
+
+/* **************************** */
+
+/* Don't show the "add new card" button unless JS is working, because it won't work without JS. */
+
+.use-new-card-hidden-no-js {
+	display: none;
+}
+
+/* More-sane handling of the elements in the .ee-form-field--inline-group div */
+
+form#pay-by-card .ee-form-field--inline-group.ee-form-field--inline-group--freeform .ee-form-control {
+	width: auto;
+	display: inline-block;
+	float: none;
+	margin-right: .5em;
+}
+
+/* Don't pad the left and right edges of the top up radios container or the custom top-up amount
+   container. */
+
+form#pay-by-card .col.top-up-radios,
+form#pay-by-card .col.custom-amount-field-container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* Always have a left-padding specified in px, since the bg radio element image
+   is 19px. Here we make the gap between radio and text 15px. */
+
+form#pay-by-card .ee-form-field--input-group .top-up-radios input[type='radio'] + label {
+	padding-left: 34px;
+}
+
+.bills-and-payments-mod form#specialBillOptions {
+	margin-top: 2em;
+}
+
+form#specialBillOptions .ee-form-field--input-group {
+	display: inline;
+	color: $color-aqua;
+	margin-right: 2em;
+}
+
+form#specialBillOptions .ee-form-field--input-group label:before {
+	top: 3px;
+}
+
+@media (min-width: 45em) {
+	form#pay-by-card .col.top-up-radios label {
+		font-size: 1.125em;
+	}
+
+	form#pay-by-card .col.top-up-radios label:before {
+		top: 4px;
+	}
+}
+
+#myAccountsTable {
+	border-bottom: 1px dotted #808080;
+}
+
+.brand-logo-set + .brand-logo-set {
+	margin-left: 0;
+}
+
+.brand-logo-ee {
+	width: 28px;
+	height: 48px;
+}
+
+.brand-logo-orange {
+	width: 24px;
+	height: 24px;
+	background-position: -36px 50%;
+}
+
+.brand-logo-tmobile {
+	width: 24px;
+	height: 24px;
+	background-position: -68px 50%;
+}
+
+/* Allow us to mark CMSable variables */
+
+.cmsable {
+	margin: .25em 0;
+	border: $color-cmsable 3px dotted;
+	padding: .25em;
+}
+
+.cmsable label {
+	display: inline-block;
+	margin: -1em 0 .25em -1em;
+	background-color: $color-cmsable;
+	padding: .125em;
+	font-size: 10px;
+	color: $color-white;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.fieldset-header {
+	padding: 0 1em;
+}
+
+.nestedPanel:after {
+	clear: none !important;
+}
+
+/* .input-button-cmsable-container {
+	display: inline-block;
+} */
+
+.brand-color-tmobile {
+	color: $color-brand-tmobile !important;
+}
+
+.brand-color-orange {
+	color: $color-brand-orange !important;
+}
+
+.brand-color-ee {
+	color: $color-aqua;
+}
+
+@media (max-width: 26em) {
+	.mobile-view-hidden {
+		display: none;
+	}
+
+	.login-or-reg-heading {
+		font-size: 1.8em !important;
+	}
+}
+
+.paym-benefits-header-mod .one-true {
+	background-color: $color-white;
+}
+
+.three-column-billing-header .paym-benefits-header-mod .one-true {
+	background-color: transparent;
+}
+
+.paym-benefits-header-mod .col:after {
+	content: ' ';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.ee-overlay-outer-wrap {
+	display: none;
+	z-index: 40001;
+	position: fixed;
+	top: 0;
+}
+
+.ee-overlay-inner-wrap {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: $color-black;
+	opacity: .5;
+
+	/* Sets opacity so it's partly transparent */
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
+
+	/* IE transparency */
+	filter: alpha(opacity=50);
+
+	/* More IE transparency */
+	z-index: 40001;
+}
+
+.ee-overlay-vertical-offset {
+	position: fixed;
+	top: 30%;
+	width: 100%;
+	z-index: 40002;
+}
+
+.ee-overlay-content-wrap {
+	width: 50%;
+	max-width: 58.75em;
+
+	/* 940px */
+	position: relative;
+	margin: 0 auto;
+}
+
+.ee-overlay-header {
+	max-width: 80%;
+}
+
+.ee-overlay-header,
+.ee-overlay-close-btn-container {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.ee-overlay-close-btn-container {
+	float: right;
+}
+
+.ee-overlay-close-link,
+.ee--icons.ee-icon-cross {
+	font-weight: 600;
+	line-height: 1;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.ee-overlay-close-link {
+	padding-top: .5em;
+}
+
+.ee-overlay-header-container {
+	border-bottom: 1px dotted $color-black;
+	margin-bottom: 1.25em;
+}
+
+.ee-overlay-content-detail {
+	font-family: $base-font-family;
+}
+
+@media (min-width: 1646px) {
+	.ee-overlay-content-wrap {
+		position: relative;
+		left: -156px;
+	}
+}
+
+.bills-and-payments-mod #viewtabs .tabs__tab-container,
+.tabs__tab-container .tabs__content {
+	background-color: $color-white;
+}
+
+#viewtabs .tabs__tab-list {
+	text-align: left;
+}
+
+#viewtabs .tabs__tabs-decoration-container .tabs__tab-list {
+	margin: 0;
+}
+
+#viewtabs .tabs__tab-list li {
+	border-radius: 0;
+	text-align: center;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	height: 2.625em !important;
+
+	/* 42px */
+	vertical-align: bottom;
+	min-width: auto;
+	max-width: 31.5%;
+}
+
+#viewtabs .tabs__tab-list li a {
+	vertical-align: middle;
+	font-weight: 600;
+	padding: 0 1.5em;
+	display: table-cell;
+	line-height: 1em;
+	text-align: center;
+	font-family: $base-font-family;
+}
+
+#viewtabs .tabs__tab-list .tab-list__triangle {
+	display: none;
+}
+
+#viewtabs .tabs__tab-list li.tabs__tab--on {
+	background-color: $color-white;
+	z-index: 9;
+	height: 3em !important;
+
+	/* 48px */
+	padding-top: .3em;
+}
+
+/* First tab */
+
+li:first-child.tabs__tab--on ~ li:nth-child(2) {
+	margin-left: -.3em !important;
+}
+
+/* 2nd Second tab */
+
+li:nth-child(2).tabs__tab--on {
+	margin-left: -.3em !important;
+}
+
+li:nth-child(2).tabs__tab--on ~ li:last-child {
+	font-size: 1em;
+	margin-left: -.3em !important;
+}
+
+/* Last tab */
+
+li:last-child.tabs__tab--on {
+	margin-left: -.3em !important;
+}
+
+/* Last tab */
+
+li:first-child.tabs__tab--on {
+	margin-left: 0 !important;
+}
+
+/* 940px */
+
+@media (min-width: 45em) {
+	#viewtabs .tabs__tab-list li {
+		max-width: 13.125em;
+
+		/* 210px */
+	}
+}
+
+/* Crumbs */
+
+.breadcrumb > .container {
+	background-color: transparent !important;
+	padding-top: 0 !important;
+	padding-bottom: 0;
+}
+
+.breadcrumb > .container > div > ul {
+	color: $color-grey-dark;
+	background-color: $color-grey-extralight;
+	padding: .75em;
+}
+
+/* Crumbs */
+
+.tabs .tabs__tab-container {
+	border-radius: 0;
+}
+
+.container.paym-benefits-header-mod {
+	padding: .75em !important;
+}
+
+.device-device-image,
+.device-device-detail {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.device__info .span-4 span.styled-select {
+	width: 100%;
+}
+
+.device__info .device-device-detail {
+	padding-left: 1.5em;
+}
+
+.device__info .panel {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@media (min-width: 45em) {
+	.device__info .col:last-child .panel,
+	.device__info .col:last-child {
+		padding-right: 0 !important;
+	}
+
+	.device__info .span-4 .panel {
+		padding-left: 1.5em;
+	}
+}
+
+/* ==========================================================================
+   Misc classes
+   ========================================================================== */
+
+@media (max-width: 44.9375em) {
+	.not-handheld {
+		display: none !important;
+	}
+}
+
+@media print {
+	.not-handheld {
+		display: block !important;
+	}
+}
+
+@media (min-width: 45em) {
+	.handheld-only {
+		display: none !important;
+	}
+}
+
+.masthead-focus [role='main'],
+.masthead-focus .ee-footer {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+.cta-group {
+	clear: both;
+	margin-top: 1.5em;
+}
+
+.cta-group p:first-child {
+	margin-top: 0;
+}
+
+.cta-group__button:last-child {
+	margin-right: 0;
+}
+
+.cta-group__link {
+	font-weight: 700;
+	line-height: 1;
+}
+
+.cta-group__link:after {
+	margin-left: .5em;
+	content: '>';
+	font-family: $base-font-family;
+	vertical-align: middle;
+}
+
+.download-link__icon {
+	margin-right: .333em;
+}
+
+/* ==========================================================================
+   Toggle buttons
+   ========================================================================== */
+
+.link-toggle {
+	padding: .5em;
+	margin-bottom: .5em;
+	border-radius: .375em;
+	border: 1px solid $color-grey;
+	color: $color-aqua;
+	float: left;
+	width: 100%;
+}
+
+@media (min-width: 45em) {
+	.link-toggle {
+		padding: .75em;
+	}
+}
+
+@media (min-width: 75em) {
+	.link-toggle {
+		padding: .75em;
+	}
+}
+
+@media (min-width: 45em) {
+	.link-toggle {
+		margin-bottom: .75em;
+	}
+}
+
+@media (min-width: 75em) {
+	.link-toggle {
+		margin-bottom: .75em;
+	}
+}
+
+.link-toggle.link-toggle--selected {
+	background: $color-aqua;
+	color: $color-white;
+	border: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+.styled-search-box {
+	overflow: hidden;
+	position: relative;
+	padding: 1em 4em 1em 1em;
+	border-radius: .25em;
+	background-color: $color-ivory-background;
+}
+
+.styled-search-box input,
+.styled-search-box button {
+	background-color: transparent;
+}
+
+.styled-search-box input {
+	display: block;
+	width: 100%;
+	padding: 0;
+	border: none;
+}
+
+.styled-search-box input:focus {
+	outline: none;
+}
+
+.styled-search-box button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: .6em .5em;
+	border: 0 dotted;
+	border-left-width: 1px;
+	color: $color-aqua;
+	font-size: 1.5em;
+}
+
+.styled-search-box button:focus {
+	color: $color-aqua-dark;
+}
+
+@media (min-width: 45em) {
+	.styled-search-box {
+		padding: .4em 2.5em .4em .5em;
+	}
+
+	.styled-search-box button {
+		padding: .3em;
+		font-size: 1.25em;
+	}
+}
+
+/* ==========================================================================
+   Download list
+   ========================================================================== */
+
+.download-list {
+	margin: 1em 0;
+}
+
+.download-list ul {
+	list-style: none;
+	padding: 0;
+	border-top: 1px dotted;
+}
+
+.download-list ul li {
+	list-style-image: none;
+	list-style-type: none;
+	margin-left: 0;
+	padding: 1em 0;
+	border-bottom: 1px dotted;
+}
+
+@media (min-width: 40em) {
+	.download-list ul li {
+		padding-left: 2.2em;
+	}
+}
+
+.download-list p {
+	margin: .5em 0 0;
+}
+
+.download-list__heading-icon {
+	margin-right: .333em;
+}
+
+/* ==========================================================================
+   ToolTip
+   ========================================================================== */
+
+.tooltip {
+	background: $color-ivory-background;
+	border: 1px solid $color-ivory;
+	position: absolute;
+	min-width: 5em;
+	max-width: 30em;
+	border-radius: .25em;
+}
+
+.tooltip .tooltip__content {
+	padding-left: 4em;
+}
+
+.tooltip .tooltip__content:before {
+	content: '\e037';
+	font-family: ee-icons;
+	font-size: 2em;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 1.5em;
+}
+
+/* ==========================================================================
+   CQ overrides
+   ========================================================================== */
+
+/**
+ * Due to CQ's use of parsys, we get too much margin at the top of pages, so
+ * remove the top margin of modules in a parsys.
+ */
+
+.parsys > .module {
+	margin-top: 0;
+}
+
+/**
+ * If a parsys contains elements that are floated, the target to drop new
+ * components into it will not clear them and be rendered over components
+ * already dropped in the parsys.
+ */
+
+.new.section {
+	clear: both;
+}
+
+/**
+ * Images injected by the linkchecker functionality may inherit specific widths
+ * from component styles so make sure they are always auto.
+ */
+
+img[src*='linkchecker'] {
+	width: auto !important;
+}
+
+/**
+ * 1. CQ relies on content-box box sizing.
+ * 2. The EE code adds styles to pseudo elements on top level elements, so we
+ *    need to hide these by default in #CQ.
+ */
+
+#CQ * {
+	box-sizing: content-box;
+
+	/* 1 */
+}
+
+#CQ *:before,
+#CQ *:after {
+	display: none;
+
+	/* 2 */
+}
+
+/* ==========================================================================
+   ee-overlay
+   ========================================================================== */
+
+.ee-overlay {
+	display: none;
+}
+
+.ee-overlay--active {
+	display: block;
+}
+
+.ee-overlay__background {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 8500;
+	background-color: $color-black;
+	/* stylelint-disable */
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+	/* stylelint-enable */
+	opacity: .8;
+}
+
+.ee-overlay__window {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 8510;
+	width: 85%;
+	min-width: 18.125em;
+	max-width: 60em;
+	background-color: $color-white;
+}
+
+.ee-overlay__window .container {
+	margin: 0;
+}
+
+.ee-overlay__header {
+	position: relative;
+	padding: 1em 2em 1em 1em;
+	color: $color-white;
+	background-color: $color-grey;
+}
+
+.ee-overlay__heading {
+	font-size: 1.92857em;
+	font-family: $font-nobblee;
+	line-height: 1;
+	text-transform: uppercase;
+	margin: 0;
+	font-weight: 100;
+}
+
+@media (min-width: 45em) {
+	.ee-overlay__heading {
+		font-size: 2.125em;
+	}
+}
+
+.ee-overlay__close {
+	position: absolute;
+	top: .35em;
+	right: .35em;
+	color: $color-white !important;
+	font-size: 150%;
+}
+
+.ee-overlay__main {
+	border: 1px solid $color-grey;
+	border-top-width: 0;
+}
+
+@media (min-width: 45em) {
+	.ee-overlay__window {
+		width: 61.8%;
+	}
+
+	.ee-overlay__header {
+		padding: 1.5em 3em 1.5em 1.5em;
+	}
+}
+
+/* ==========================================================================
+   Lazy Loading
+   ========================================================================== */
+
+.cq-image-wrapper {
+	display: block;
+	position: relative;
+	padding-top: 56.25%;
+}
+
+.cq-image-wrapper img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+/* ==========================================================================
+   Background images
+   ========================================================================== */
+
+.background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+	z-index: -9998;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+.background-image img {
+	position: absolute;
+	width: auto;
+	max-width: none;
+}
+
+.js .background-image img {
+	display: none;
+}
+
+@media print {
+	.background-image {
+		display: none !important;
+	}
+}
+
+.expandable__module-header {
+	padding: 1em;
+}
+
+@media (min-width: 45em) {
+	.expandable__module-header {
+		padding: 1.5em;
+	}
+}
+
+@media (min-width: 75em) {
+	.expandable__module-header {
+		padding: 1.5em;
+	}
+}
+
+.expandable__module-heading {
+	margin: 0;
+}
+
+.expandable__panel-container {
+	margin: 0 0 .5em;
+	padding: 1em;
+	padding-top: 0 !important;
+}
+
+@media (min-width: 45em) {
+	.expandable__panel-container {
+		padding: 1.5em;
+	}
+}
+
+@media (min-width: 75em) {
+	.expandable__panel-container {
+		padding: 1.5em;
+	}
+}
+
+.expandable__panel-header {
+	margin: 0;
+	padding: .5em 0;
+}
+
+.expandable__panel-header .expandable__icon {
+	margin-right: .25em;
+	vertical-align: baseline;
+}
+
+.no-js .expandable__panel-header .expandable__icon {
+	display: none;
+}
+
+.expandable__icon--open {
+	display: none;
+}
+
+.expandable__panel {
+	margin: 0;
+}
+
+@media (min-width: 60em) {
+	.expandable__panel > div {
+		max-width: 91.66667%;
+	}
+}
+
+@media (min-width: 85em) {
+	.expandable__panel > div {
+		max-width: 75%;
+	}
+}
+
+.js .expandable__panel-header {
+	cursor: pointer;
+}
+
+.js .expandable__panel-header,
+.js .expandable__panel {
+	border-bottom: 1px dotted;
+}
+
+.js .expandable__panel--open,
+.js .expandable__panel--active {
+	border-bottom: none;
+}
+
+.js .expandable__panel--open .expandable__icon--closed {
+	display: none;
+}
+
+.js .expandable__panel--open .expandable__icon--open {
+	display: inline;
+}
+
+.js .expandable__panel {
+	display: none;
+	padding-bottom: 1.5em;
+}
+
+@media (min-width: 35em) {
+	.js .expandable__panel > div {
+		padding-left: 2.8em;
+	}
+}
+
+@media (min-width: 50em) {
+	.js .expandable__panel > div {
+		padding-left: 3.1em;
+	}
+}
+
+.cq-wcm-edit .expandable__panel-header {
+	border-bottom: none;
+}
+
+.cq-wcm-edit .expandable__panel-header .expandable__icon--closed {
+	display: none;
+}
+
+.cq-wcm-edit .expandable__panel-header .expandable__icon--open {
+	display: inline;
+}
+
+.cq-wcm-edit .expandable__panel {
+	display: block !important;
+	overflow: visible !important;
+}
+
+/* ==========================================================================
+   Business segment prompt
+   ========================================================================== */
+
+.ee-business-segment-prompt__heading {
+	margin: 0;
+	font: 1.5em/1 $base-font-family;
+}
+
+.ee-business-segment-prompt__heading + p {
+	margin-top: .5em;
+}
+
+.ee-overlay--segment-prompt .ee-overlay__background {
+	background-color: $color-ivory;
+	/* stylelint-disable */
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+	/* stylelint-enable */
+	opacity: .5;
+}
+
+.ee-overlay--segment-prompt .ee-overlay__header {
+	background-color: $color-aqua;
+}
+
+.ee-overlay--segment-prompt .ee-overlay__main {
+	border-color: $color-aqua;
+}
+
+@media (max-width: 44.9375em) {
+	.ee-overlay--segment-prompt .ee-overlay__window {
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: .5em;
+	}
+}
+
+/* common.css movement end */
+
+/*
+*Reworking tabs on all pages
+*
+*
+*/
+
+.nav-tabs {
+	margin: 0;
+	padding: 0;
+}
+
+.nav-tabs li {
+	display: inline-block;
+	background-color: $color-grey-extralight;
+}
+
+.nav-tabs li a {
+	padding: 10px 31px;
+	font-family: $base-font-family;
+	font-size: 1em;
+	display: inline-block;
+	color: $color-aqua;
+	font-weight: 700;
+	outline: none;
+}
+
+.nav-tabs li a.active {
+	background-color: $color-white;
+	color: $color-black;
+	padding-top: 16px;
+}
+
+.tab-content .tab-pane {
+	display: none;
+}
+
+.tab-content .tab-pane.active {
+	display: block;
+}
+
+.panel.gray {
+	background-color: $color-ivory-background;
+}
+
+/* BANNER FIX - START */
+
+.myee #full-width-header.module {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.promo-banner-wrapper {
+	margin: 0 auto;
+	padding: 0 1.5em;
+	max-width: 79.375em;
+}
+
+@media (max-width: 45em) {
+	.promo-banner-wrapper {
+		padding: 0 1.25em;
+	}
+}
+
+.promo-banner-wrapper img {
+	min-width: 100%;
+	margin-top: 1.5em;
+}
+
+.heading-container.container {
+	padding: .75em;
+}
+
+.myee .panels,
+.device-and-usage-main-mod .panels {
+	margin-top: 0;
+}
+
+/* BANNER FIX - END */
+
+.myee .tab-pane {
+	background: $color-white;
+	padding: 22px;
+}
+
+.myee .tab-pane .module {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.myee .tab-pane .panel {
+	padding: 0;
+}
+
+.myee .tab-pane .module h3:first-child {
+	margin-top: 0;
+}
+
+.myee .menubar {
+	padding: 0;
+}
+
+.myee-btn {
+	display: block;
+	width: 100%;
+	padding: 14px;
+	border: none;
+	border-radius: 4px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.myee-btn-default {
+	background-color: $color-white;
+	color: $color-aqua-dark;
+	border: 1px solid $color-aqua-dark;
+}
+
+.myee-btn-default:hover {
+	background-color: $color-white-darker;
+}
+
+.myee-btn-success {
+	color: $color-white;
+	background-color: $color-aqua-dark;
+	border: 1px solid $color-aqua-dark;
+}
+
+.myee .myee-r .container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.myee.myee-r h3:first-child {
+	margin-top: 0;
+}
+
+.myee.myee-r .container-fluid {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.myee.myee-r .row {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.myee.myee-r .col-xs-1,
+.myee.myee-r .col-sm-1,
+.myee.myee-r .col-md-1,
+.myee.myee-r .col-lg-1,
+.myee.myee-r .col-xs-2,
+.myee.myee-r .col-sm-2,
+.myee.myee-r .col-md-2,
+.myee.myee-r .col-lg-2,
+.myee.myee-r .col-xs-3,
+.myee.myee-r .col-sm-3,
+.myee.myee-r .col-md-3,
+.myee.myee-r .col-lg-3,
+.myee.myee-r .col-xs-4,
+.myee.myee-r .col-sm-4,
+.myee.myee-r .col-md-4,
+.myee.myee-r .col-lg-4,
+.myee.myee-r .col-xs-5,
+.myee.myee-r .col-sm-5,
+.myee.myee-r .col-md-5,
+.myee.myee-r .col-lg-5,
+.myee.myee-r .col-xs-6,
+.myee.myee-r .col-sm-6,
+.myee.myee-r .col-md-6,
+.myee.myee-r .col-lg-6,
+.myee.myee-r .col-xs-7,
+.myee.myee-r .col-sm-7,
+.myee.myee-r .col-md-7,
+.myee.myee-r .col-lg-7,
+.myee.myee-r .col-xs-8,
+.myee.myee-r .col-sm-8,
+.myee.myee-r .col-md-8,
+.myee.myee-r .col-lg-8,
+.myee.myee-r .col-xs-9,
+.myee.myee-r .col-sm-9,
+.myee.myee-r .col-md-9,
+.myee.myee-r .col-lg-9,
+.myee.myee-r .col-xs-10,
+.myee.myee-r .col-sm-10,
+.myee.myee-r .col-md-10,
+.myee.myee-r .col-lg-10,
+.myee.myee-r .col-xs-11,
+.myee.myee-r .col-sm-11,
+.myee.myee-r .col-md-11,
+.myee.myee-r .col-lg-11,
+.myee.myee-r .col-xs-12,
+.myee.myee-r .col-sm-12,
+.myee.myee-r .col-md-12,
+.myee.myee-r .col-lg-12 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.myee.myee-r .col-xs-1,
+.myee.myee-r .col-xs-2,
+.myee.myee-r .col-xs-3,
+.myee.myee-r .col-xs-4,
+.myee.myee-r .col-xs-5,
+.myee.myee-r .col-xs-6,
+.myee.myee-r .col-xs-7,
+.myee.myee-r .col-xs-8,
+.myee.myee-r .col-xs-9,
+.myee.myee-r .col-xs-10,
+.myee.myee-r .col-xs-11,
+.myee.myee-r .col-xs-12 {
+	float: left;
+}
+
+.myee.myee-r .col-xs-12 {
+	width: 100%;
+}
+
+.myee.myee-r .col-xs-11 {
+	width: 91.66666667%;
+}
+
+.myee.myee-r .col-xs-10 {
+	width: 83.33333333%;
+}
+
+.myee.myee-r .col-xs-9 {
+	width: 75%;
+}
+
+.myee.myee-r .col-xs-8 {
+	width: 66.66666667%;
+}
+
+.myee.myee-r .col-xs-7 {
+	width: 58.33333333%;
+}
+
+.myee.myee-r .col-xs-6 {
+	width: 50%;
+}
+
+.myee.myee-r .col-xs-5 {
+	width: 41.66666667%;
+}
+
+.myee.myee-r .col-xs-4 {
+	width: 33.33333333%;
+}
+
+.myee.myee-r .col-xs-3 {
+	width: 25%;
+}
+
+.myee.myee-r .col-xs-2 {
+	width: 16.66666667%;
+}
+
+.myee.myee-r .col-xs-1 {
+	width: 8.33333333%;
+}
+
+.myee.myee-r .col-xs-pull-12 {
+	right: 100%;
+}
+
+.myee.myee-r .col-xs-pull-11 {
+	right: 91.66666667%;
+}
+
+.myee.myee-r .col-xs-pull-10 {
+	right: 83.33333333%;
+}
+
+.myee.myee-r .col-xs-pull-9 {
+	right: 75%;
+}
+
+.myee.myee-r .col-xs-pull-8 {
+	right: 66.66666667%;
+}
+
+.myee.myee-r .col-xs-pull-7 {
+	right: 58.33333333%;
+}
+
+.myee.myee-r .col-xs-pull-6 {
+	right: 50%;
+}
+
+.myee.myee-r .col-xs-pull-5 {
+	right: 41.66666667%;
+}
+
+.myee.myee-r .col-xs-pull-4 {
+	right: 33.33333333%;
+}
+
+.myee.myee-r .col-xs-pull-3 {
+	right: 25%;
+}
+
+.myee.myee-r .col-xs-pull-2 {
+	right: 16.66666667%;
+}
+
+.myee.myee-r .col-xs-pull-1 {
+	right: 8.33333333%;
+}
+
+.myee.myee-r .col-xs-pull-0 {
+	right: auto;
+}
+
+.myee.myee-r .col-xs-push-12 {
+	left: 100%;
+}
+
+.myee.myee-r .col-xs-push-11 {
+	left: 91.66666667%;
+}
+
+.myee.myee-r .col-xs-push-10 {
+	left: 83.33333333%;
+}
+
+.myee.myee-r .col-xs-push-9 {
+	left: 75%;
+}
+
+.myee.myee-r .col-xs-push-8 {
+	left: 66.66666667%;
+}
+
+.myee.myee-r .col-xs-push-7 {
+	left: 58.33333333%;
+}
+
+.myee.myee-r .col-xs-push-6 {
+	left: 50%;
+}
+
+.myee.myee-r .col-xs-push-5 {
+	left: 41.66666667%;
+}
+
+.myee.myee-r .col-xs-push-4 {
+	left: 33.33333333%;
+}
+
+.myee.myee-r .col-xs-push-3 {
+	left: 25%;
+}
+
+.myee.myee-r .col-xs-push-2 {
+	left: 16.66666667%;
+}
+
+.myee.myee-r .col-xs-push-1 {
+	left: 8.33333333%;
+}
+
+.myee.myee-r .col-xs-push-0 {
+	left: auto;
+}
+
+.myee.myee-r .col-xs-offset-12 {
+	margin-left: 100%;
+}
+
+.myee.myee-r .col-xs-offset-11 {
+	margin-left: 91.66666667%;
+}
+
+.myee.myee-r .col-xs-offset-10 {
+	margin-left: 83.33333333%;
+}
+
+.myee.myee-r .col-xs-offset-9 {
+	margin-left: 75%;
+}
+
+.myee.myee-r .col-xs-offset-8 {
+	margin-left: 66.66666667%;
+}
+
+.myee.myee-r .col-xs-offset-7 {
+	margin-left: 58.33333333%;
+}
+
+.myee.myee-r .col-xs-offset-6 {
+	margin-left: 50%;
+}
+
+.myee.myee-r .col-xs-offset-5 {
+	margin-left: 41.66666667%;
+}
+
+.myee.myee-r .col-xs-offset-4 {
+	margin-left: 33.33333333%;
+}
+
+.myee.myee-r .col-xs-offset-3 {
+	margin-left: 25%;
+}
+
+.myee.myee-r .col-xs-offset-2 {
+	margin-left: 16.66666667%;
+}
+
+.myee.myee-r .col-xs-offset-1 {
+	margin-left: 8.33333333%;
+}
+
+.myee.myee-r .col-xs-offset-0 {
+	margin-left: 0%;
+}
+
+@media (min-width: 768px) {
+	.myee.myee-r .col-sm-1,
+	.myee.myee-r .col-sm-2,
+	.myee.myee-r .col-sm-3,
+	.myee.myee-r .col-sm-4,
+	.myee.myee-r .col-sm-5,
+	.myee.myee-r .col-sm-6,
+	.myee.myee-r .col-sm-7,
+	.myee.myee-r .col-sm-8,
+	.myee.myee-r .col-sm-9,
+	.myee.myee-r .col-sm-10,
+	.myee.myee-r .col-sm-11,
+	.myee.myee-r .col-sm-12 {
+		float: left;
+	}
+
+	.myee.myee-r .col-sm-12 {
+		width: 100%;
+	}
+
+	.myee.myee-r .col-sm-11 {
+		width: 91.66666667%;
+	}
+
+	.myee.myee-r .col-sm-10 {
+		width: 83.33333333%;
+	}
+
+	.myee.myee-r .col-sm-9 {
+		width: 75%;
+	}
+
+	.myee.myee-r .col-sm-8 {
+		width: 66.66666667%;
+	}
+
+	.myee.myee-r .col-sm-7 {
+		width: 58.33333333%;
+	}
+
+	.myee.myee-r .col-sm-6 {
+		width: 50%;
+	}
+
+	.myee.myee-r .col-sm-5 {
+		width: 41.66666667%;
+	}
+
+	.myee.myee-r .col-sm-4 {
+		width: 33.33333333%;
+	}
+
+	.myee.myee-r .col-sm-3 {
+		width: 25%;
+	}
+
+	.myee.myee-r .col-sm-2 {
+		width: 16.66666667%;
+	}
+
+	.myee.myee-r .col-sm-1 {
+		width: 8.33333333%;
+	}
+
+	.myee.myee-r .col-sm-pull-12 {
+		right: 100%;
+	}
+
+	.myee.myee-r .col-sm-pull-11 {
+		right: 91.66666667%;
+	}
+
+	.myee.myee-r .col-sm-pull-10 {
+		right: 83.33333333%;
+	}
+
+	.myee.myee-r .col-sm-pull-9 {
+		right: 75%;
+	}
+
+	.myee.myee-r .col-sm-pull-8 {
+		right: 66.66666667%;
+	}
+
+	.myee.myee-r .col-sm-pull-7 {
+		right: 58.33333333%;
+	}
+
+	.myee.myee-r .col-sm-pull-6 {
+		right: 50%;
+	}
+
+	.myee.myee-r .col-sm-pull-5 {
+		right: 41.66666667%;
+	}
+
+	.myee.myee-r .col-sm-pull-4 {
+		right: 33.33333333%;
+	}
+
+	.myee.myee-r .col-sm-pull-3 {
+		right: 25%;
+	}
+
+	.myee.myee-r .col-sm-pull-2 {
+		right: 16.66666667%;
+	}
+
+	.myee.myee-r .col-sm-pull-1 {
+		right: 8.33333333%;
+	}
+
+	.myee.myee-r .col-sm-pull-0 {
+		right: auto;
+	}
+
+	.myee.myee-r .col-sm-push-12 {
+		left: 100%;
+	}
+
+	.myee.myee-r .col-sm-push-11 {
+		left: 91.66666667%;
+	}
+
+	.myee.myee-r .col-sm-push-10 {
+		left: 83.33333333%;
+	}
+
+	.myee.myee-r .col-sm-push-9 {
+		left: 75%;
+	}
+
+	.myee.myee-r .col-sm-push-8 {
+		left: 66.66666667%;
+	}
+
+	.myee.myee-r .col-sm-push-7 {
+		left: 58.33333333%;
+	}
+
+	.myee.myee-r .col-sm-push-6 {
+		left: 50%;
+	}
+
+	.myee.myee-r .col-sm-push-5 {
+		left: 41.66666667%;
+	}
+
+	.myee.myee-r .col-sm-push-4 {
+		left: 33.33333333%;
+	}
+
+	.myee.myee-r .col-sm-push-3 {
+		left: 25%;
+	}
+
+	.myee.myee-r .col-sm-push-2 {
+		left: 16.66666667%;
+	}
+
+	.myee.myee-r .col-sm-push-1 {
+		left: 8.33333333%;
+	}
+
+	.myee.myee-r .col-sm-push-0 {
+		left: auto;
+	}
+
+	.myee.myee-r .col-sm-offset-12 {
+		margin-left: 100%;
+	}
+
+	.myee.myee-r .col-sm-offset-11 {
+		margin-left: 91.66666667%;
+	}
+
+	.myee.myee-r .col-sm-offset-10 {
+		margin-left: 83.33333333%;
+	}
+
+	.myee.myee-r .col-sm-offset-9 {
+		margin-left: 75%;
+	}
+
+	.myee.myee-r .col-sm-offset-8 {
+		margin-left: 66.66666667%;
+	}
+
+	.myee.myee-r .col-sm-offset-7 {
+		margin-left: 58.33333333%;
+	}
+
+	.myee.myee-r .col-sm-offset-6 {
+		margin-left: 50%;
+	}
+
+	.myee.myee-r .col-sm-offset-5 {
+		margin-left: 41.66666667%;
+	}
+
+	.myee.myee-r .col-sm-offset-4 {
+		margin-left: 33.33333333%;
+	}
+
+	.myee.myee-r .col-sm-offset-3 {
+		margin-left: 25%;
+	}
+
+	.myee.myee-r .col-sm-offset-2 {
+		margin-left: 16.66666667%;
+	}
+
+	.myee.myee-r .col-sm-offset-1 {
+		margin-left: 8.33333333%;
+	}
+
+	.myee.myee-r .col-sm-offset-0 {
+		margin-left: 0%;
+	}
+}
+
+@media (min-width: 992px) {
+	.myee.myee-r .col-md-1,
+	.myee.myee-r .col-md-2,
+	.myee.myee-r .col-md-3,
+	.myee.myee-r .col-md-4,
+	.myee.myee-r .col-md-5,
+	.myee.myee-r .col-md-6,
+	.myee.myee-r .col-md-7,
+	.myee.myee-r .col-md-8,
+	.myee.myee-r .col-md-9,
+	.myee.myee-r .col-md-10,
+	.myee.myee-r .col-md-11,
+	.myee.myee-r .col-md-12 {
+		float: left;
+	}
+
+	.myee.myee-r .col-md-12 {
+		width: 100%;
+	}
+
+	.myee.myee-r .col-md-11 {
+		width: 91.66666667%;
+	}
+
+	.myee.myee-r .col-md-10 {
+		width: 83.33333333%;
+	}
+
+	.myee.myee-r .col-md-9 {
+		width: 75%;
+	}
+
+	.myee.myee-r .col-md-8 {
+		width: 66.66666667%;
+	}
+
+	.myee.myee-r .col-md-7 {
+		width: 58.33333333%;
+	}
+
+	.myee.myee-r .col-md-6 {
+		width: 50%;
+	}
+
+	.myee.myee-r .col-md-5 {
+		width: 41.66666667%;
+	}
+
+	.myee.myee-r .col-md-4 {
+		width: 33.33333333%;
+	}
+
+	.myee.myee-r .col-md-3 {
+		width: 25%;
+	}
+
+	.myee.myee-r .col-md-2 {
+		width: 16.66666667%;
+	}
+
+	.myee.myee-r .col-md-1 {
+		width: 8.33333333%;
+	}
+
+	.myee.myee-r .col-md-pull-12 {
+		right: 100%;
+	}
+
+	.myee.myee-r .col-md-pull-11 {
+		right: 91.66666667%;
+	}
+
+	.myee.myee-r .col-md-pull-10 {
+		right: 83.33333333%;
+	}
+
+	.myee.myee-r .col-md-pull-9 {
+		right: 75%;
+	}
+
+	.myee.myee-r .col-md-pull-8 {
+		right: 66.66666667%;
+	}
+
+	.myee.myee-r .col-md-pull-7 {
+		right: 58.33333333%;
+	}
+
+	.myee.myee-r .col-md-pull-6 {
+		right: 50%;
+	}
+
+	.myee.myee-r .col-md-pull-5 {
+		right: 41.66666667%;
+	}
+
+	.myee.myee-r .col-md-pull-4 {
+		right: 33.33333333%;
+	}
+
+	.myee.myee-r .col-md-pull-3 {
+		right: 25%;
+	}
+
+	.myee.myee-r .col-md-pull-2 {
+		right: 16.66666667%;
+	}
+
+	.myee.myee-r .col-md-pull-1 {
+		right: 8.33333333%;
+	}
+
+	.myee.myee-r .col-md-pull-0 {
+		right: auto;
+	}
+
+	.myee.myee-r .col-md-push-12 {
+		left: 100%;
+	}
+
+	.myee.myee-r .col-md-push-11 {
+		left: 91.66666667%;
+	}
+
+	.myee.myee-r .col-md-push-10 {
+		left: 83.33333333%;
+	}
+
+	.myee.myee-r .col-md-push-9 {
+		left: 75%;
+	}
+
+	.myee.myee-r .col-md-push-8 {
+		left: 66.66666667%;
+	}
+
+	.myee.myee-r .col-md-push-7 {
+		left: 58.33333333%;
+	}
+
+	.myee.myee-r .col-md-push-6 {
+		left: 50%;
+	}
+
+	.myee.myee-r .col-md-push-5 {
+		left: 41.66666667%;
+	}
+
+	.myee.myee-r .col-md-push-4 {
+		left: 33.33333333%;
+	}
+
+	.myee.myee-r .col-md-push-3 {
+		left: 25%;
+	}
+
+	.myee.myee-r .col-md-push-2 {
+		left: 16.66666667%;
+	}
+
+	.myee.myee-r .col-md-push-1 {
+		left: 8.33333333%;
+	}
+
+	.myee.myee-r .col-md-push-0 {
+		left: auto;
+	}
+
+	.myee.myee-r .col-md-offset-12 {
+		margin-left: 100%;
+	}
+
+	.myee.myee-r .col-md-offset-11 {
+		margin-left: 91.66666667%;
+	}
+
+	.myee.myee-r .col-md-offset-10 {
+		margin-left: 83.33333333%;
+	}
+
+	.myee.myee-r .col-md-offset-9 {
+		margin-left: 75%;
+	}
+
+	.myee.myee-r .col-md-offset-8 {
+		margin-left: 66.66666667%;
+	}
+
+	.myee.myee-r .col-md-offset-7 {
+		margin-left: 58.33333333%;
+	}
+
+	.myee.myee-r .col-md-offset-6 {
+		margin-left: 50%;
+	}
+
+	.myee.myee-r .col-md-offset-5 {
+		margin-left: 41.66666667%;
+	}
+
+	.myee.myee-r .col-md-offset-4 {
+		margin-left: 33.33333333%;
+	}
+
+	.myee.myee-r .col-md-offset-3 {
+		margin-left: 25%;
+	}
+
+	.myee.myee-r .col-md-offset-2 {
+		margin-left: 16.66666667%;
+	}
+
+	.myee.myee-r .col-md-offset-1 {
+		margin-left: 8.33333333%;
+	}
+
+	.myee.myee-r .col-md-offset-0 {
+		margin-left: 0%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.myee.myee-r .col-lg-1,
+	.myee.myee-r .col-lg-2,
+	.myee.myee-r .col-lg-3,
+	.myee.myee-r .col-lg-4,
+	.myee.myee-r .col-lg-5,
+	.myee.myee-r .col-lg-6,
+	.myee.myee-r .col-lg-7,
+	.myee.myee-r .col-lg-8,
+	.myee.myee-r .col-lg-9,
+	.myee.myee-r .col-lg-10,
+	.myee.myee-r .col-lg-11,
+	.myee.myee-r .col-lg-12 {
+		float: left;
+	}
+
+	.myee.myee-r .col-lg-12 {
+		width: 100%;
+	}
+
+	.myee.myee-r .col-lg-11 {
+		width: 91.66666667%;
+	}
+
+	.myee.myee-r .col-lg-10 {
+		width: 83.33333333%;
+	}
+
+	.myee.myee-r .col-lg-9 {
+		width: 75%;
+	}
+
+	.myee.myee-r .col-lg-8 {
+		width: 66.66666667%;
+	}
+
+	.myee.myee-r .col-lg-7 {
+		width: 58.33333333%;
+	}
+
+	.myee.myee-r .col-lg-6 {
+		width: 50%;
+	}
+
+	.myee.myee-r .col-lg-5 {
+		width: 41.66666667%;
+	}
+
+	.myee.myee-r .col-lg-4 {
+		width: 33.33333333%;
+	}
+
+	.myee.myee-r .col-lg-3 {
+		width: 25%;
+	}
+
+	.myee.myee-r .col-lg-2 {
+		width: 16.66666667%;
+	}
+
+	.myee.myee-r .col-lg-1 {
+		width: 8.33333333%;
+	}
+
+	.myee.myee-r .col-lg-pull-12 {
+		right: 100%;
+	}
+
+	.myee.myee-r .col-lg-pull-11 {
+		right: 91.66666667%;
+	}
+
+	.myee.myee-r .col-lg-pull-10 {
+		right: 83.33333333%;
+	}
+
+	.myee.myee-r .col-lg-pull-9 {
+		right: 75%;
+	}
+
+	.myee.myee-r .col-lg-pull-8 {
+		right: 66.66666667%;
+	}
+
+	.myee.myee-r .col-lg-pull-7 {
+		right: 58.33333333%;
+	}
+
+	.myee.myee-r .col-lg-pull-6 {
+		right: 50%;
+	}
+
+	.myee.myee-r .col-lg-pull-5 {
+		right: 41.66666667%;
+	}
+
+	.myee.myee-r .col-lg-pull-4 {
+		right: 33.33333333%;
+	}
+
+	.myee.myee-r .col-lg-pull-3 {
+		right: 25%;
+	}
+
+	.myee.myee-r .col-lg-pull-2 {
+		right: 16.66666667%;
+	}
+
+	.myee.myee-r .col-lg-pull-1 {
+		right: 8.33333333%;
+	}
+
+	.myee.myee-r .col-lg-pull-0 {
+		right: auto;
+	}
+
+	.myee.myee-r .col-lg-push-12 {
+		left: 100%;
+	}
+
+	.myee.myee-r .col-lg-push-11 {
+		left: 91.66666667%;
+	}
+
+	.myee.myee-r .col-lg-push-10 {
+		left: 83.33333333%;
+	}
+
+	.myee.myee-r .col-lg-push-9 {
+		left: 75%;
+	}
+
+	.myee.myee-r .col-lg-push-8 {
+		left: 66.66666667%;
+	}
+
+	.myee.myee-r .col-lg-push-7 {
+		left: 58.33333333%;
+	}
+
+	.myee.myee-r .col-lg-push-6 {
+		left: 50%;
+	}
+
+	.myee.myee-r .col-lg-push-5 {
+		left: 41.66666667%;
+	}
+
+	.myee.myee-r .col-lg-push-4 {
+		left: 33.33333333%;
+	}
+
+	.myee.myee-r .col-lg-push-3 {
+		left: 25%;
+	}
+
+	.myee.myee-r .col-lg-push-2 {
+		left: 16.66666667%;
+	}
+
+	.myee.myee-r .col-lg-push-1 {
+		left: 8.33333333%;
+	}
+
+	.myee.myee-r .col-lg-push-0 {
+		left: auto;
+	}
+
+	.myee.myee-r .col-lg-offset-12 {
+		margin-left: 100%;
+	}
+
+	.myee.myee-r .col-lg-offset-11 {
+		margin-left: 91.66666667%;
+	}
+
+	.myee.myee-r .col-lg-offset-10 {
+		margin-left: 83.33333333%;
+	}
+
+	.myee.myee-r .col-lg-offset-9 {
+		margin-left: 75%;
+	}
+
+	.myee.myee-r .col-lg-offset-8 {
+		margin-left: 66.66666667%;
+	}
+
+	.myee.myee-r .col-lg-offset-7 {
+		margin-left: 58.33333333%;
+	}
+
+	.myee.myee-r .col-lg-offset-6 {
+		margin-left: 50%;
+	}
+
+	.myee.myee-r .col-lg-offset-5 {
+		margin-left: 41.66666667%;
+	}
+
+	.myee.myee-r .col-lg-offset-4 {
+		margin-left: 33.33333333%;
+	}
+
+	.myee.myee-r .col-lg-offset-3 {
+		margin-left: 25%;
+	}
+
+	.myee.myee-r .col-lg-offset-2 {
+		margin-left: 16.66666667%;
+	}
+
+	.myee.myee-r .col-lg-offset-1 {
+		margin-left: 8.33333333%;
+	}
+
+	.myee.myee-r .col-lg-offset-0 {
+		margin-left: 0%;
+	}
+}
+
+.myee.myee-r .clearfix:before,
+.myee.myee-r .clearfix:after,
+.myee.myee-r .container:before,
+.myee.myee-r .container:after,
+.myee.myee-r .container-fluid:before,
+.myee.myee-r .container-fluid:after,
+.myee.myee-r .row:before,
+.myee.myee-r .row:after {
+	content: ' ';
+	display: table;
+}
+
+.myee.myee-r .clearfix:after,
+.myee.myee-r .container:after,
+.myee.myee-r .container-fluid:after,
+.myee.myee-r .row:after {
+	clear: both;
+}
+
+.myee.myee-r .center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.myee.myee-r .floating .container {
+	width: auto !important;
+
+	/* fix container width in floating panel */
+}
+
+#main {
+	font-family: $base-font-family;
+}
